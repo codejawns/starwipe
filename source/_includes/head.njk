@@ -1,0 +1,14 @@
+<head>
+
+  {%- metagen
+    name = site.name,
+    desc = site.description,
+    site_name = site.website,
+    title = title + ": " + site.website,
+    url = site.url + page.url,
+    generator = "eleventy"
+  -%}
+
+  {%- favicons site.favicon -%}
+
+</head>

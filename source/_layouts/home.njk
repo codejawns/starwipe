@@ -1,0 +1,19 @@
+---
+layout: base
+title: Home page for presentations
+---
+
+{% set navigation = collections.all | eleventyNavigation() %}
+
+{%- block main_content -%}
+
+  {{ content | safe }}
+
+  {%- if collections.all | eleventyNavigation() -%}
+    <ul>
+      {%- for item in navigation %}
+        <li><a href="{{- item.url | url -}}">{{- item.title -}}</a></li>
+      {%- endfor %}
+    </ul>
+  {%- endif -%}
+{%- endblock main_content -%}

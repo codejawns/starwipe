@@ -1,0 +1,30 @@
+{
+  "name": "starswipe",
+  "version": "1.0.0",
+  "description": "a small little presentation slideshow",
+  "author": "Reed Piernock",
+  "license": "GPL-3.0-only",
+  "homepage": "https://github.com/reedcodes/starswipe#readme",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/reedcodes/starswipe.git"
+  },
+  "bugs": {
+    "url": "https://github.com/reedcodes/starswipe/issues"
+  },
+  "devDependencies": {
+    "@11ty/eleventy": "^2.0.0",
+    "@11ty/eleventy-img": "^3.0.0",
+    "@11ty/eleventy-navigation": "^0.3.5",
+    "a11y-color-tokens": "^0.6.0",
+    "eleventy-plugin-gen-favicons": "^1.1.2",
+    "eleventy-plugin-metagen": "^1.7.11",
+    "include-media": "^2.0.0",
+    "npm-run-all": "^4.1.5",
+    "sass": "^1.58.3"
+  },
+  "scripts": {
+    "build:11ty": "npx @11ty/eleventy",
+    "refresh": "rm -rf ./docs/ && npm run build:11ty"
+  }
+}
