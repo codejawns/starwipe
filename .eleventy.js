@@ -6,7 +6,8 @@ module.exports = function( eleventyConfig ) {
 
   eleventyConfig.addPassthroughCopy( {
     "./source/_images/": "dist/images/",
-    "./source/_webfonts/": "dist/webfonts/"
+    "./node_modules/@fontsource/public-sans/files/public-sans-latin-5*.*": "dist/webfonts/",
+    "./node_modules/@fontsource/public-sans/files/public-sans-latin-8*.*": "dist/webfonts/"
   } );
 
   eleventyConfig.addPlugin(eleventyNavigationPlugin);
