@@ -1,3 +1,10 @@
 ---
 layout: base
 ---
+
+{#- This is the presentation layout. It inherits from `base`. Any content
+    entered on `index.njk` in the `./source/presentation/` folders will be
+    output in the area marked as `{{ content | safe }}`.
+-#}
+
+{{ content | safe }}
