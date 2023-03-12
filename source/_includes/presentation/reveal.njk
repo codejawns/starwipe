@@ -1,0 +1,34 @@
+{%- macro reveal() -%}
+
+  <script src="{{- "/dist/js/reveal.js" | url -}}"></script>
+  <script src="{{- "/dist/js/plugin/highlight/highlight.js" | url -}}"></script>
+  <script src="{{- "/dist/js/plugin/markdown/markdown.js" | url -}}"></script>
+  <script src="{{- "/dist/js/plugin/notes/notes.js" | url -}}"></script>
+  <script>
+    Reveal.initialize(
+      {
+        // Plugins.
+        plugins: [
+          RevealHighlight,
+          RevealMarkdown,
+          RevealNotes
+        ],
+
+        // Config options.
+        transition: "fade",
+        transitionSpeed: "slow",
+        autoAnimateDuration: 0.6,
+        controlsLayout: "edges",
+        controlsBackArrows: "visible",
+        progress: false,
+        showSlideNumber: "speaker",
+        hash: true,
+        hashOneBasedIndex: true,
+        fragmentInURL: false,
+        mouseWheel: true,
+        totalTime: (30 * 60)
+      }
+    );
+  </script>
+
+{%- endmacro -%}

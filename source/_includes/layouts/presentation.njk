@@ -1,0 +1,16 @@
+{%- extends "layouts/base.njk" -%}
+
+{#-
+    Import any macros we want to use in this layout. By using macros, we can
+    include reusable code pieces, and pass optional parameters. First, they need
+    to be imported, before we can call them later.
+-#}
+{%- from "presentation/reveal.njk" import reveal with context -%}
+
+{%- block main_content -%}
+  {{ content | safe }}
+{%- endblock main_content -%}
+
+{%- block script_content -%}
+  {{ reveal() }}
+{%- endblock script_content -%}

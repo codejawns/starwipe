@@ -9,7 +9,7 @@
     include reusable code pieces, and pass optional parameters. First, they need
     to be imported, before we can call them later.
 -#}
-{%- from "head.njk" import head with context -%}
+{%- from "global/head.njk" import head with context -%}
 
 <!DOCTYPE html>
 <html lang="en">
@@ -20,30 +20,34 @@
       file references. It is placed in a block so that other layouts that
       inherit this one can add any items that are needed, by including the
       `head` macro and customizing its output. If the inherited layout does
-      not include any head content, then this `head()` is used as default.
+      not include any head content, then this `head()` is used with defaults.
   -#}
   {%- block head_content -%}
-    {{- head(
-        head_title=site.website
-        ) -}}
+    {{- head() -}}
   {%- endblock head_content -%}
 </head>
 
 <body>
 
   <main class="main">
+    {#-
+        While the base layout isn't really used directly, it may be! Whether
+        intentional or not, we make sure a call to a pages content is included
+        in the `main_content` block. This block will be extended in other
+        layouts, and provide the bulk of a page's content.
+    -#}
     {%- block main_content -%}
-      <h1>{{- title -}}</h1>
+      <h1>{{ title }}</h1>
       {{ content | safe }}
     {%- endblock main_content -%}
   </main>
 
 {#-
-    While the base layout doesn't call any foot content, e.g. `script`, the
-    block is added here, so other layouts that inherit this one can add any
-    items that are needed.
+    While the base layout doesn't call any scripts directly, the block is added
+    here, so other layouts that extend this one can add any items that are
+    needed.
 -#}
-{%- block foot_content -%}{%- endblock foot_content -%}
+{%- block script_content -%}{%- endblock script_content -%}
 
 </body>
 </html>

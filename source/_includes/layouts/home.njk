@@ -1,0 +1,25 @@
+{%- extends "layouts/base.njk" -%}
+
+{%- block main_content -%}
+
+  {#-
+      There are a few modifications the home layout wants to make to the base
+      layout that it is extended; however, it also still wants to use the
+      content already _included_ in the `main_content` section, e.g. the page
+      title and the call to content. Using `super()` here means we can still
+      use that content while also extended what's inside `main_content`.
+  -#}
+  {{ super() }}
+
+  {#- The navigation is set to include all pages in the source -#}
+  {% set navigation = collections.all | eleventyNavigation() %}
+
+  {%- if collections.all | eleventyNavigation() -%}
+    <ul>
+      {%- for item in navigation %}
+        <li><a href="{{- item.url | url -}}">{{- item.title -}}</a></li>
+      {%- endfor %}
+    </ul>
+  {%- endif -%}
+
+{%- endblock main_content -%}
