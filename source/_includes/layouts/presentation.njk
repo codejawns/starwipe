@@ -7,10 +7,26 @@
 -#}
 {%- from "presentation/reveal.njk" import reveal with context -%}
 
+
+
+{%- block head_content -%}
+  {{- head(
+      head_css = ["/dist/css/presentation.css"]
+      ) -}}
+{%- endblock head_content -%}
+
+
+
 {%- block main_content -%}
-  {{ content | safe }}
+  <div class="reveal">
+    <div class="slides">
+      {{ content | safe }}
+    </div>
+  </div>
 {%- endblock main_content -%}
 
+
+
 {%- block script_content -%}
-  {{ reveal() }}
+  {{- reveal() -}}
 {%- endblock script_content -%}

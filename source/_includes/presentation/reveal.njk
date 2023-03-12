@@ -1,4 +1,17 @@
-{%- macro reveal() -%}
+{%- macro reveal(
+    slide_transition = "fade",
+    slide_transition_speed = "slow",
+    slide_auto_animate = 0.6,
+    slide_controls_layout = "edges",
+    slide_controls_back = "visible",
+    slide_progress = false,
+    slide_show_number = "speaker",
+    slide_hash = true,
+    slide_hash_one_index = true,
+    slide_fragment_url = false,
+    slide_mouse_wheel = true,
+    slide_total_time = 30
+) -%}
 
   <script src="{{- "/dist/js/reveal.js" | url -}}"></script>
   <script src="{{- "/dist/js/plugin/highlight/highlight.js" | url -}}"></script>
@@ -15,18 +28,18 @@
         ],
 
         // Config options.
-        transition: "fade",
-        transitionSpeed: "slow",
-        autoAnimateDuration: 0.6,
-        controlsLayout: "edges",
-        controlsBackArrows: "visible",
-        progress: false,
-        showSlideNumber: "speaker",
-        hash: true,
-        hashOneBasedIndex: true,
-        fragmentInURL: false,
-        mouseWheel: true,
-        totalTime: (30 * 60)
+        transition: "{{ slide_transition }}",
+        transitionSpeed: "{{ slide_transition_speed }}",
+        autoAnimateDuration: {{ slide_auto_animate }},
+        controlsLayout: "{{ slide_controls_layout }}",
+        controlsBackArrows: "{{ slide_controls_back }}",
+        progress: {{ slide_progress }},
+        showSlideNumber: "{{ slide_show_number }}",
+        hash: {{ slide_hash }},
+        hashOneBasedIndex: {{ slide_hash_one_index }},
+        fragmentInURL: {{ slide_fragment_url }},
+        mouseWheel: {{ slide_mouse_wheel }},
+        totalTime: ({{ slide_total_time }} * 60)
       }
     );
   </script>

@@ -22,12 +22,13 @@
     "eleventy-plugin-metagen": "^1.7.11",
     "include-media": "^2.0.0",
     "npm-run-all": "^4.1.5",
+    "reveal.js": "^4.4.0",
     "sass": "^1.58.3"
   },
   "scripts": {
     "serve": "npx @11ty/eleventy --serve",
     "build:11ty": "npx @11ty/eleventy",
-    "build:css": "sass ./source/_sass:./docs/dist/css --load-path=./node_modules/include-media/dist",
+    "build:css": "sass ./source/_sass:./docs/dist/css --load-path=./node_modules/include-media/dist --load-path=./node_modules/reveal.js/css",
     "refresh": "rm -rf ./docs/ && npm run build:11ty"
   }
 }

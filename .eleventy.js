@@ -13,9 +13,18 @@ module.exports = function( eleventyConfig ) {
   // isn't necessary; 11ty looks for that directory defined in the `return`
   // options.
   eleventyConfig.addPassthroughCopy( {
+    // Move global images to the build directory. These are images used
+    // throughout the site, like logos, profile photos, or icons. They are not
+    // images specific to presentations, such as screenshots or figures.
     "./source/_images/": "dist/images/",
+
+    // Move webfonts to the build directory.
     "./node_modules/@fontsource/public-sans/files/public-sans-latin-5*.*": "dist/webfonts/",
-    "./node_modules/@fontsource/public-sans/files/public-sans-latin-8*.*": "dist/webfonts/"
+    "./node_modules/@fontsource/public-sans/files/public-sans-latin-8*.*": "dist/webfonts/",
+
+    // Move reveal.js files to the build directory.
+    "./node_modules/reveal.js/dist/reveal.js*": "dist/js/",
+    "./node_modules/reveal.js/plugin/": "dist/js/plugin/"
   } );
 
   // Let's use the 11ty navigation plugin! For this project, we don't need a
