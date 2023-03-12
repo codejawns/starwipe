@@ -11,13 +11,42 @@
   -#}
   {{ super() }}
 
-  {#- The navigation is set to include all pages in the source -#}
-  {% set navigation = collections.all | eleventyNavigation() %}
 
-  {%- if collections.all | eleventyNavigation() -%}
+
+  {#-
+      Let's list out _only_ the pages on the site. This will exclude any
+      presentations from the output here.
+  -#}
+
+  <h2>Site pages</h2>
+
+  {#- The navigation is set to include only pages in the source -#}
+  {% set nav_page = collections.page | eleventyNavigation() %}
+
+  {%- if nav_page -%}
     <ul>
-      {%- for item in navigation %}
-        <li><a href="{{- item.url | url -}}">{{- item.title -}}</a></li>
+      {%- for page in nav_page %}
+        <li><a href="{{- page.url | url -}}">{{- page.title -}}</a></li>
+      {%- endfor %}
+    </ul>
+  {%- endif -%}
+
+
+
+  {#-
+      Let's list out _only_ the presentations on the site. This will exclude any
+      pages from the output here.
+  -#}
+
+  <h2>Presentations</h2>
+
+  {#- The navigation is set to include all presentations in the source -#}
+  {% set nav_presentation = collections.presentation | eleventyNavigation() %}
+
+  {%- if nav_presentation -%}
+    <ul>
+      {%- for presentation in nav_presentation %}
+        <li><a href="{{- presentation.url | url -}}">{{- presentation.title -}}</a></li>
       {%- endfor %}
     </ul>
   {%- endif -%}

@@ -1,7 +1,7 @@
 module.exports = {
-  layout: "layouts/presentation.njk",
+  layout: "layouts/default.njk",
   permalink: "/{{ page.fileSlug }}/",
-  tags: "presentation",
+  tags: "page",
   eleventyComputed: {
     eleventyNavigation: {
       key: data => data.title
