@@ -1,13 +1,33 @@
-<!--
-  The base layout is the file that other layouts may inherit. This includes a
-  pared-down, bare-bones skeleton, that includes the default page `head`, and
-  blocks for content.
-  -->
+{#-
+    The base layout is the file that other layouts may inherit. This includes a
+    pared-down, bare-bones skeleton, that includes the default page `head`, and
+    blocks for content.
+-#}
+
+{#-
+    Import any macros we want to use in this layout. By using macros, we can
+    include reusable code pieces, and pass optional parameters. First, they need
+    to be imported, before we can call them later.
+-#}
+{%- from "head.njk" import head with context -%}
 
 <!DOCTYPE html>
 <html lang="en">
 
-{% include "head.njk" %}
+<head>
+  {#-
+      The base layout includes head content, such as meta information or CSS
+      file references. It is placed in a block so that other layouts that
+      inherit this one can add any items that are needed, by including the
+      `head` macro and customizing its output. If the inherited layout does
+      not include any head content, then this `head()` is used as default.
+  -#}
+  {%- block head_content -%}
+    {{- head(
+        head_title=site.website
+        ) -}}
+  {%- endblock head_content -%}
+</head>
 
 <body>
 
@@ -17,6 +37,13 @@
       {{ content | safe }}
     {%- endblock main_content -%}
   </main>
+
+{#-
+    While the base layout doesn't call any foot content, e.g. `script`, the
+    block is added here, so other layouts that inherit this one can add any
+    items that are needed.
+-#}
+{%- block foot_content -%}{%- endblock foot_content -%}
 
 </body>
 </html>

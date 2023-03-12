@@ -1,4 +1,8 @@
-<head>
+{%- macro head(
+    head_title = title + ": " + site.website,
+    head_css = ["/dist/css/screen.css"],
+    head_favicon = site.favicon
+) -%}
 
   {%- metagen
     name = site.name,
@@ -6,9 +10,10 @@
     site_name = site.website,
     title = title + ": " + site.website,
     url = site.url + page.url,
-    generator = "eleventy"
+    generator = "eleventy",
+    css = head_css
   -%}
 
-  {%- favicons site.favicon -%}
+  {%- favicons head_favicon -%}
 
-</head>
+{%- endmacro -%}

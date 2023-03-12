@@ -25,7 +25,9 @@
     "sass": "^1.58.3"
   },
   "scripts": {
+    "serve": "npx @11ty/eleventy --serve",
     "build:11ty": "npx @11ty/eleventy",
+    "build:css": "sass ./source/_sass:./docs/dist/css --load-path=./node_modules/include-media/dist",
     "refresh": "rm -rf ./docs/ && npm run build:11ty"
   }
 }
