@@ -63,7 +63,8 @@ module.exports = function( eleventyConfig ) {
     dir: {
       input: "source", // root-level, where 11ty looks for the source files
       data: "_data", // under the source, any site global data
-      includes: "_includes", // under the source, partials and layouts
+      includes: "_includes", // under the source, include and partials
+      layouts: "_layouts", // user the source, page layouts
       output: "docs" // root-level, where 11ty puts the final built site
     },
   };

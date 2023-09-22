@@ -1,4 +1,6 @@
-{%- extends "layouts/base.njk" -%}
+---
+layout: base.njk
+---
 
 {#-
     Import any macros we want to use in this layout. By using macros, we can
@@ -9,21 +11,11 @@
 
 
 
-{%- block head_content -%}
-  {{- head(
-      head_css = ["/dist/css/presentation.css"]
-      ) -}}
-{%- endblock head_content -%}
-
-
-
-{%- block main_content -%}
-  <div class="reveal">
-    <div class="slides">
-      {{ content | safe }}
-    </div>
+<div class="reveal">
+  <div class="slides">
+    {{ content | safe }}
   </div>
-{%- endblock main_content -%}
+</div>
 
 
 

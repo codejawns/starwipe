@@ -1,17 +1,6 @@
-{%- extends "layouts/base.njk" -%}
-
-{%- block main_content -%}
-
-  {#-
-      There are a few modifications the home layout wants to make to the base
-      layout that it is extended; however, it also still wants to use the
-      content already _included_ in the `main_content` section, e.g. the page
-      title and the call to content. Using `super()` here means we can still
-      use that content while also extended what's inside `main_content`.
-  -#}
-  {{ super() }}
-
-
+---
+layout: base.njk
+---
 
   {#-
       Let's list out _only_ the pages on the site. This will exclude any
@@ -68,5 +57,3 @@
       {%- endfor %}
     </ul>
   {%- endif -%}
-
-{%- endblock main_content -%}

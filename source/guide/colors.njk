@@ -3,9 +3,11 @@ title: Colors
 ---
 
 {%- if colors -%}
-  <ul>
+  <ul class="guide-colors" role="list">
     {%- for color in colors -%}
-      <li>{{- color.name -}}: {{- color.color -}}</li>
+      <li style="background-color: {{- color.color -}};">
+        {{- color.name -}}
+      </li>
     {%- endfor -%}
   </ul>
 {%- endif -%}
