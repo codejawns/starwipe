@@ -1,5 +1,5 @@
 module.exports = {
-  layout: "default.njk",
+  layout: "guide.njk",
   permalink: "/guide/{{ page.fileSlug }}/",
   tags: "guide",
   eleventyComputed: {

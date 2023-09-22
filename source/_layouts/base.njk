@@ -1,53 +1,57 @@
-{#-
-    The base layout is the file that other layouts may inherit. This includes a
+{#- The base layout is the file that other layouts may inherit. This includes a
     pared-down, bare-bones skeleton, that includes the default page `head`, and
     blocks for content.
 -#}
 
-{#-
-    Import any macros we want to use in this layout. By using macros, we can
-    include reusable code pieces, and pass optional parameters. First, they need
-    to be imported, before we can call them later.
--#}
-{%- from "global/head.njk" import head with context -%}
-
 <!DOCTYPE html>
 <html lang="en">
 
+
+{#- The base layout includes head content, such as meta information or CSS
+    file references.
+-#}
+
 <head>
-  {#-
-      The base layout includes head content, such as meta information or CSS
-      file references. It is placed in a block so that other layouts that
-      inherit this one can add any items that are needed, by including the
-      `head` macro and customizing its output. If the inherited layout does
-      not include any head content, then this `head()` is used with defaults.
+
+  {#- The `metagen` plugin more easily outputs head meta information, such as
+      site generator, CSS files, page title, and more.
   -#}
-  {%- block head_content -%}
-    {{- head() -}}
-  {%- endblock head_content -%}
+
+  {%- metagen
+    name = site.name,
+    desc = site.description,
+    site_name = site.website,
+    title = title + ": " + site.website,
+    url = site.url + page.url,
+    generator = "eleventy",
+    css = ["/dist/css/" + (css if css else "page") + ".css"]
+  -%}
+
+  {#- The `favicon` plugin will accept a link to the site's favicon. The
+      settings for this plugin are defined in the `eleventy.js` file.
+  -#}
+
+  {%- favicons site.favicon -%}
 </head>
 
 <body>
 
+  <header>
+    <h1>{{ title }}</h1>
+  </header>
+
   <main class="main">
-    {#-
-        While the base layout isn't really used directly, it may be! Whether
-        intentional or not, we make sure a call to a pages content is included
-        in the `main_content` block. This block will be extended in other
-        layouts, and provide the bulk of a page's content.
+    {#- We make sure a call to a pages content is included in the `main`.
+        The content in this region may be extended in other layouts, and
+        provide the bulk of a page's content.
     -#}
-    {%- block main_content -%}
-      <h1>{{ title }}</h1>
-      {{ content | safe }}
-    {%- endblock main_content -%}
+
+    {{ content | safe }}
   </main>
 
-{#-
-    While the base layout doesn't call any scripts directly, the block is added
-    here, so other layouts that extend this one can add any items that are
-    needed.
--#}
-{%- block script_content -%}{%- endblock script_content -%}
+  <footer>
+    <p>{{- site.name }}</p>
+  </footer>
 
 </body>
 </html>
