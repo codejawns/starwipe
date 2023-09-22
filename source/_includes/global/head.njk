@@ -9,9 +9,10 @@
     site_name = site.website,
     title = head_title,
     url = site.url + page.url,
-    generator = "eleventy",
-    css = head_css
+    generator = "eleventy"
   -%}
+
+  <link rel="stylesheet" href="{{- head_css -}}">
 
   {%- favicons site.favicon -%}
 
