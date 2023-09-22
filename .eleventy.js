@@ -48,7 +48,7 @@ module.exports = function( eleventyConfig ) {
   // Setting quiet mode to `true` will remove a lot of output from the console
   // as you build the site. Instead of listing out all files generated from the
   // build, it will only display the file copy and write outputs. Set this to
-  // `false` if you'd rather have all that information available after build. 
+  // `false` if you'd rather have all that information available when building. 
   eleventyConfig.setQuietMode(true);
 
   return {
