@@ -1,0 +1,11 @@
+---
+title: Colors
+---
+
+{%- if colors -%}
+  <ul>
+    {%- for color in colors -%}
+      <li>{{- color.name -}}: {{- color.color -}}</li>
+    {%- endfor -%}
+  </ul>
+{%- endif -%}

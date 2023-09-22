@@ -1,7 +1,7 @@
 module.exports = [
   {
     name: "black",
-    color: "#333232"
+    color: "#333232ff"
   },
   {
     name: "gray",
