@@ -1,16 +1,16 @@
 {
-  "name": "starswipe",
+  "name": "starwipe",
   "version": "1.0.0",
-  "description": "a small little presentation slideshow",
+  "description": "a small little presentation slideshow built with 11ty and reveal.js",
   "author": "Reed Piernock",
   "license": "GPL-3.0-only",
-  "homepage": "https://github.com/reedcodes/starswipe#readme",
+  "homepage": "https://github.com/reedcodes/starwipe#readme",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/reedcodes/starswipe.git"
+    "url": "git+https://github.com/reedcodes/starwipe.git"
   },
   "bugs": {
-    "url": "https://github.com/reedcodes/starswipe/issues"
+    "url": "https://github.com/reedcodes/starwipe/issues"
   },
   "devDependencies": {
     "@11ty/eleventy": "^2.0.0",
@@ -27,6 +27,8 @@
   },
   "scripts": {
     "refresh": "rm -rf ./docs/ && npm run build:11ty",
+    "watch:tokens": "onchange ./source/_data/color.js -- npm-run-all build:tokens build:css",
+    "build:tokens": "touch ./source/_sass/colors/color-token-contrast.md && npx a11y-color-tokens --colorTokensPath='./source/_data/colors.js' --outputDirPath='./source/_sass/colors' --no-tokenPrefix --compatibilityDocsPath='./source/_sass/colors'",
     "watch:css": "sass --watch --load-path=./node_modules/reveal.js/css ./source/_sass:./docs/dist/css",
     "build:css": "sass --load-path=./node_modules/reveal.js/css ./source/_sass:./docs/dist/css",
     "watch:11ty": "npx @11ty/eleventy --serve",
