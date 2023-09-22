@@ -1,7 +1,10 @@
-// Import necessary 11ty plugins.
-const metagen = require( "eleventy-plugin-metagen" );
-const eleventyFaviconsPlugin = require("eleventy-plugin-gen-favicons");
+// 11ty plugins.
+const { EleventyHtmlBasePlugin } = require("@11ty/eleventy");
 const eleventyNavigationPlugin = require("@11ty/eleventy-navigation");
+
+// Third-party 11ty plugins.
+const eleventyFaviconsPlugin = require("eleventy-plugin-gen-favicons");
+const metagen = require( "eleventy-plugin-metagen" );
 
 module.exports = function( eleventyConfig ) {
 
@@ -44,6 +47,10 @@ module.exports = function( eleventyConfig ) {
   eleventyConfig.addPlugin(eleventyFaviconsPlugin, {
     "outputDir": "./docs"
   });
+
+  // The 11ty HTML Base plugin adjusts URLs across the site, instead of coding
+  // the HTML `<base>` element, or using the `url` filter on every single URL.
+  eleventyConfig.addPlugin(EleventyHtmlBasePlugin);
 
   // Setting quiet mode to `true` will remove a lot of output from the console
   // as you build the site. Instead of listing out all files generated from the
