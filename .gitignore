@@ -3,5 +3,10 @@
 .env
 node_modules
 
-#Built files.
+# The accessible color lists. They are copied when the project is initialized,
+# so they do not need to be committed. Only the data file and the index file
+# are committed.
+*color-token*.*
+
+# The final built, compiled site.
 docs
