@@ -7,6 +7,11 @@
 
   <script>
     Reveal.initialize({
+      plugins: [
+        RevealHighlight,
+        RevealMarkdown,
+        RevealNotes
+      ],
       transition: "{{ slides.transition if slides.transition else "fade" }}",
       transitionSpeed: "{{ slides.transition_speed if slides.transition_speed else "slow" }}",
       autoAnimateDuration: {{ slides.auto_animate if slides.auto_animate else 0.6 }},
