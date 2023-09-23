@@ -1,7 +1,12 @@
 {%- macro reveal(slides)-%}
 
+  <script src="/dist/js/reveal.js"></script>
+  <script src="/dist/js/plugin/highlight/highlight.js"></script>
+  <script src="/dist/js/plugin/markdown/markdown.js"></script>
+  <script src="/dist/js/plugin/notes/notes.js"></script>
+
   <script>
-    Reveal.initialize(
+    Reveal.initialize({
       transition: "{{ slides.transition if slides.transition else "fade" }}",
       transitionSpeed: "{{ slides.transition_speed if slides.transition_speed else "slow" }}",
       autoAnimateDuration: {{ slides.auto_animate if slides.auto_animate else 0.6 }},
@@ -14,7 +19,7 @@
       fragmentInURL: {{ slides.fragment_url if slides.fragment_url else false }},
       mouseWheel: {{ slides.mouse_wheel if slides.mouse_wheel else true }},
       totalTime: ({{ slides.total_time if slides.total_time else 30 }} * 60)
-    );
+    });
   </script>
 
 {%- endmacro -%}
