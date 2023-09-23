@@ -1,46 +1,19 @@
-{%- macro reveal(
-    slide_transition = "fade",
-    slide_transition_speed = "slow",
-    slide_auto_animate = 0.6,
-    slide_controls_layout = "edges",
-    slide_controls_back = "visible",
-    slide_progress = false,
-    slide_show_number = "speaker",
-    slide_hash = true,
-    slide_hash_one_index = true,
-    slide_fragment_url = false,
-    slide_mouse_wheel = true,
-    slide_total_time = 30
-) -%}
+{%- macro reveal(slides)-%}
 
-  <script src="{{- "/dist/js/reveal.js" | url -}}"></script>
-  <script src="{{- "/dist/js/plugin/highlight/highlight.js" | url -}}"></script>
-  <script src="{{- "/dist/js/plugin/markdown/markdown.js" | url -}}"></script>
-  <script src="{{- "/dist/js/plugin/notes/notes.js" | url -}}"></script>
   <script>
     Reveal.initialize(
-      {
-        // Plugins.
-        plugins: [
-          RevealHighlight,
-          RevealMarkdown,
-          RevealNotes
-        ],
-
-        // Config options.
-        transition: "{{ slide_transition }}",
-        transitionSpeed: "{{ slide_transition_speed }}",
-        autoAnimateDuration: {{ slide_auto_animate }},
-        controlsLayout: "{{ slide_controls_layout }}",
-        controlsBackArrows: "{{ slide_controls_back }}",
-        progress: {{ slide_progress }},
-        showSlideNumber: "{{ slide_show_number }}",
-        hash: {{ slide_hash }},
-        hashOneBasedIndex: {{ slide_hash_one_index }},
-        fragmentInURL: {{ slide_fragment_url }},
-        mouseWheel: {{ slide_mouse_wheel }},
-        totalTime: ({{ slide_total_time }} * 60)
-      }
+      transition: "{{ slides.transition if slides.transition else "fade" }}",
+      transitionSpeed: "{{ slides.transition_speed if slides.transition_speed else "slow" }}",
+      autoAnimateDuration: {{ slides.auto_animate if slides.auto_animate else 0.6 }},
+      controlsLayout: "{{ slides.controls_layout if slides.controls_layout else "edges" }}",
+      controlsBackArrows: "{{ slides.controls_back if slides.controls_back else "visible" }}",
+      progress: {{ slides.progress if slides.progress else false }},
+      showSlideNumber: "{{ slides.show_number if slides.show_number else "speaker" }}",
+      hash: {{ slides.hash if slides.hash else true }},
+      hashOneBasedIndex: {{ slides.hash_one_index if slides.hash_one_index else true }},
+      fragmentInURL: {{ slides.fragment_url if slides.fragment_url else false }},
+      mouseWheel: {{ slides.mouse_wheel if slides.mouse_wheel else true }},
+      totalTime: ({{ slides.total_time if slides.total_time else 30 }} * 60)
     );
   </script>
 
