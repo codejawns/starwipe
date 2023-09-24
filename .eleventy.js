@@ -58,6 +58,10 @@ module.exports = function( eleventyConfig ) {
   // `false` if you'd rather have all that information available when building. 
   eleventyConfig.setQuietMode(true);
 
+  // Add the image shortcode, from the 11ty image plugin.
+  eleventyConfig.addAsyncShortcode( "image", require("./source/_config/shortcodes/image.js") );
+
+
   return {
     // The templates here are written using Nunjucks. Any HTML or Markdown will
     // run through the Nunjucks engine when building the site. If you would like
