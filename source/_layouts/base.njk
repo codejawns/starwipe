@@ -1,16 +1,14 @@
 {#- The base layout is the file that other layouts may inherit. This includes a
     pared-down, bare-bones skeleton, that includes the default page `head`, and
-    blocks for content.
+    a call to include content.
 -#}
 
 <!DOCTYPE html>
 <html lang="en">
 
-
 {#- The base layout includes head content, such as meta information or CSS
     file references.
 -#}
-
 <head>
 
   {#- The `metagen` plugin more easily outputs head meta information, such as
@@ -30,28 +28,16 @@
   {#- The `favicon` plugin will accept a link to the site's favicon. The
       settings for this plugin are defined in the `eleventy.js` file.
   -#}
-
   {%- favicons site.favicon -%}
 </head>
 
 <body>
 
-  <header>
-    <h1>{{ title }}</h1>
-  </header>
-
-  <main class="main">
-    {#- We make sure a call to a pages content is included in the `main`.
-        The content in this region may be extended in other layouts, and
-        provide the bulk of a page's content.
-    -#}
-
-    {{ content | safe }}
-  </main>
-
-  <footer>
-    <p>{{- site.name }}</p>
-  </footer>
+  {#- We make sure a call to a page's content is included. The content in this
+      area may be extended in other layouts, and will provide the bulk of a
+      page's content.
+  -#}
+  {{ content | safe }}
 
 </body>
 </html>

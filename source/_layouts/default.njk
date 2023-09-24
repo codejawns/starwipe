@@ -2,4 +2,14 @@
 layout: base.njk
 ---
 
-{{ content | safe }}
+<header>
+  <h1>{{ title }}</h1>
+</header>
+
+<main class="main">
+  {{ content | safe }}
+</main>
+
+<footer>
+  <p>{{- site.name }}</p>
+</footer>
