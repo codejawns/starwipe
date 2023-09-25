@@ -1,0 +1,6 @@
+@use "colors" as c;
+
+:root {
+  --r-background-color: c.$black;
+  --r-main-color: c.$white;
+}

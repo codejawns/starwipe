@@ -1,2 +1,8 @@
+@use "settings/reset";
+
 @use "reveal";
-@use "theme/blood";
+@use "theme/simple";
+
+:root {
+  --body-inline-max: auto;
+}
