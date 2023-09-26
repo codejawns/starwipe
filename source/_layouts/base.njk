@@ -10,55 +10,7 @@
     file references.
 -#}
 <head>
-
-  {#- Because there are different layotus, and _especially_ because each
-      presentation could have a different theme, we need to check and set the
-      CSS file that will be included. First, is there a style set for `css`?
-  -#}
-  {%- if css -%}
-    {#- If there is, great! We'll want to add those. However, if the style is
-        for a presentation, we test for that. Since all presentations are using
-        the `presenation` layout, we can include that CSS file, along with any
-        theme we need.
-    -#}
-    {%- if "presentation" in layout -%}
-      {%- set css_files = [
-        "/dist/css/presentation.css",
-        "/dist/css/themes/" + css + ".css"
-      ] -%}
-    {%- else -%}
-      {#- If the style is _not_ a presentation, but there is still a style set,
-          we use that CSS file.
-      -#}
-      {%- set css_files = ["/dist/css/" + css + ".css"] -%}
-    {%- endif -%}
-  {%- else -%}
-    {#- If we get all the way here, and there is _no_ style set, there should
-        still be styles on the page! We can use the default styles instead.
-    -#}
-    {%- set css_files = ["/dist/css/page.css"] -%}
-  {%- endif -%}
-
-  {#- Now that we have our CSS ready, we can include the `metagen` plugin! The
-      `metagen` plugin assists with more easily outputing head meta information,
-      such as the page title, author, site description, canonical URL, etc. Some
-      of this data is set in the `site.js` data file, and some of this is set at
-      the page level. 
-  -#}
-  {%- metagen
-    name = site.name,
-    desc = site.description,
-    site_name = site.website,
-    title = title + ": " + site.website,
-    url = site.url + page.url,
-    generator = "eleventy",
-    css = css_files
-  -%}
-
-  {#- The `favicon` plugin will accept a link to the site's favicon. The
-      settings for this plugin are defined in the `eleventy.js` file.
-  -#}
-  {%- favicons site.favicon -%}
+  {%- include "global/head.njk" -%}
 </head>
 
 <body>
