@@ -7,13 +7,18 @@ const eleventyFaviconsPlugin = require("eleventy-plugin-gen-favicons");
 const metagen = require( "eleventy-plugin-metagen" );
 
 module.exports = function( eleventyConfig ) {
-
-  // Send assets from the source to the built site directory. These include
-  // files such as global images or webfonts. The 11ty `addPassthoughCopy`
-  // will take anything from the first listed folder into the second listed
-  // folder. e.g. anything that is stored in `./source/images/` will be copied
-  // into `dist/images/`. The parent directory for the built site, e.g. `docs`,
-  // isn't necessary; 11ty looks for that directory defined in the `return`
+  // Send assets from the source (`./source`) to the built site (`./docs`)
+  // directory. These include files such as global images or webfonts.
+  //
+  // 1. The first parameter is the directory that holds the items you want
+  //    copied over, or "passed through". This path is relative to your
+  //    _project root_, e.g. `./source/images/`.
+  // 2. The second parameter is the directory you want the items to be copied
+  //    over _into_. This path is relative to your _built site output_. e.g.
+  //    `dist/images/`.
+  //
+  // The parent directory for the built site isn't necessary; 11ty looks for
+  // that directory based on what is defined as the output in the `return`
   // options.
   eleventyConfig.addPassthroughCopy( {
     // Move global images to the build directory. These are images used
@@ -30,10 +35,12 @@ module.exports = function( eleventyConfig ) {
     "./node_modules/reveal.js/plugin/": "dist/js/plugin/"
   } );
 
-  // Let's use the 11ty navigation plugin! For this project, we don't need a
-  // fully fleshed out navigation, as compared to a blog or a company website.
-  // It will be easier to find the presentations and make a list on the homepage
-  // that links to each one.
+  // Let's use the 11ty navigation plugin! This plugin allows us to create a
+  // navigation menu for all or some pages on the site. For example, the main
+  // navigation includes items such as About or Contact, while the presentation
+  // navigation includes links to Presentation One, Presentation Two, etc. This
+  // helps make it easier to find the categories we want (e.g. presentations)
+  // and make a list on the homepage or in a menu that links to each one.
   eleventyConfig.addPlugin(eleventyNavigationPlugin);
 
   // The metagen plugin adds options to output a whole lot of data to the `head`
@@ -52,11 +59,11 @@ module.exports = function( eleventyConfig ) {
   // the HTML `<base>` element, or using the `url` filter on every single URL.
   eleventyConfig.addPlugin(EleventyHtmlBasePlugin);
 
-  // Setting quiet mode to `true` will remove a lot of output from the console
-  // as you build the site. Instead of listing out all files generated from the
-  // build, it will only display the file copy and write outputs. Set this to
-  // `false` if you'd rather have all that information available when building. 
-  eleventyConfig.setQuietMode(true);
+  // Setting quiet mode to `false` will include a lot of output from the console
+  // as you build the site. This lists out all files generated from the build.
+  // Set this to `true` if you would rather it only display the file copy and
+  // write outputs when building. 
+  eleventyConfig.setQuietMode(false);
 
   // Add the image shortcode, from the 11ty image plugin.
   eleventyConfig.addAsyncShortcode( "image", require("./source/_config/shortcodes/image.js") );
