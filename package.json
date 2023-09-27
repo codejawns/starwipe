@@ -4,13 +4,13 @@
   "description": "a small little presentation slideshow built with 11ty and reveal.js",
   "author": "Reed Piernock",
   "license": "GPL-3.0-only",
-  "homepage": "https://github.com/reedcodes/starwipe#readme",
+  "homepage": "https://github.com/code-jawns/starwipe#readme",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/reedcodes/starwipe.git"
+    "url": "git+https://github.com/code-jawns/starwipe.git"
   },
   "bugs": {
-    "url": "https://github.com/reedcodes/starwipe/issues"
+    "url": "https://github.com/code-jawns/starwipe/issues"
   },
   "devDependencies": {
     "@11ty/eleventy": "^2.0.0",
