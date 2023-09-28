@@ -16,7 +16,7 @@ layout: page.njk
 {%- if nav_guide -%}
   <ul>
     {%- for guide in nav_guide %}
-      <li><a href="{{- guide.url | url -}}">{{- guide.title -}}</a></li>
+      <li><a href="{{- guide.url -}}">{{- guide.title -}}</a></li>
     {%- endfor %}
   </ul>
 {%- endif -%}
@@ -35,7 +35,7 @@ layout: page.njk
 {%- if nav_presentation -%}
   <ul>
     {%- for presentation in nav_presentation %}
-      <li><a href="{{- presentation.url | url -}}">{{- presentation.title -}}</a></li>
+      <li><a href="{{- presentation.url -}}">{{- presentation.title -}}</a></li>
     {%- endfor %}
   </ul>
 {%- endif -%}

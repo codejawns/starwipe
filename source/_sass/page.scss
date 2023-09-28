@@ -1,1 +1,6 @@
 @use "settings";
+@use "utilities" as u;
+
+.main {
+  @include u.stack;
+}
