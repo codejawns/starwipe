@@ -32,7 +32,10 @@ module.exports = function( eleventyConfig ) {
 
     // Move reveal.js files to the build directory.
     "./node_modules/reveal.js/dist/reveal.js*": "dist/js/",
-    "./node_modules/reveal.js/plugin/": "dist/js/plugin/"
+    "./node_modules/reveal.js/plugin/": "dist/js/plugin/",
+
+    // The following is specific to the starwipe demo website.
+    "./images/": "dist/images/",
   } );
 
   // Let's use the 11ty navigation plugin! This plugin allows us to create a
@@ -76,6 +79,12 @@ module.exports = function( eleventyConfig ) {
     // that here. See https://www.11ty.dev/docs/languages/ for more information.
     htmlTemplateEngine: "njk",
     markdownTemplateEngine: "njk",
+
+    // If your starwipe-fueled website is hosted on GitHub Pages, then it very
+    // most likely lives in a directory that's not at the top level. Using the
+    // `pathPrefix` option allows you to keep your local directory structure
+    // however you'd like, then deploy to a directory on the hosted site.
+    pathPrefix: "/starwipe/",
     
     // This defines the directory for each aspect of an 11ty project.
     dir: {

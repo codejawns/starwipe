@@ -8,6 +8,8 @@ layout: base.njk
 
 <main class="main">
 
+  {{- content | safe -}}
+
   {#-
       Let's list out _only_ the pages on the site. This will exclude any
       style guide or presentations from the output here.
