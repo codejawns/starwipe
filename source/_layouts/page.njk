@@ -2,8 +2,8 @@
 layout: base.njk
 ---
 
-<header>
-  <h1>{{ title if title else site.title }}</h1>
+<header class="header">
+  <a href="/">{{ site.name }}</a>
 
   {#- The navigation is set to include only pages in the source -#}
   {% set nav_page = collections.page | eleventyNavigation() %}
@@ -20,9 +20,10 @@ layout: base.njk
 </header>
 
 <main class="main">
+  <h1>{{- title -}}</h1>
   {{ content | safe }}
 </main>
 
-<footer>
+<footer class="footer">
   <p>{{- site.name }}</p>
 </footer>

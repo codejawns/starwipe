@@ -1,8 +1,48 @@
 @use "settings";
 @use "components";
 
+@use "colors" as c;
 @use "utilities" as u;
+
+body {
+  display: grid;
+  grid-template-rows: auto 1fr auto;
+  align-items: start;
+  min-block-size: 100vh;
+  background-color: c.$white;
+  color: c.$black;
+  font-size: 1.25rem;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  color: c.$on-blue;
+}
+
+a {
+  color: c.$on-orange;
+  font-weight: 600;
+
+  &:hover,
+  &:focus,
+  &:active {
+    color: c.$on-white;
+  }
+
+  &:focus {
+    outline-color: currentColor;
+    outline-offset: 0.125em;
+    text-decoration: none;
+  }
+}
+
+.header {
+  margin-block-end: 2rem;
+}
 
 .main {
   @include u.stack;
+}
+
+.footer {
+  margin-block-start: auto;
 }
