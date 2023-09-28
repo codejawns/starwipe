@@ -2,27 +2,6 @@
 layout: page.njk
 ---
 
-{{- content | safe -}}
-
-{#- Let's list out _only_ the style guide on the site. This will exclude any
-    pages or presentations from the output here.
--#}
-
-<h2>Style guide</h2>
-
-{#- The navigation is set to include only style guide in the source -#}
-{% set nav_guide = collections.guide | eleventyNavigation() %}
-
-{%- if nav_guide -%}
-  <ul>
-    {%- for guide in nav_guide %}
-      <li><a href="{{- guide.url -}}">{{- guide.title -}}</a></li>
-    {%- endfor %}
-  </ul>
-{%- endif -%}
-
-
-
 {#- Let's list out _only_ the presentations on the site. This will exclude any
     style guide or pages from the output here.
 -#}
@@ -39,3 +18,5 @@ layout: page.njk
     {%- endfor %}
   </ul>
 {%- endif -%}
+
+{{- content | safe -}}

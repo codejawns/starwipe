@@ -4,6 +4,7 @@ const eleventyNavigationPlugin = require("@11ty/eleventy-navigation");
 
 // Third-party 11ty plugins.
 const eleventyFaviconsPlugin = require("eleventy-plugin-gen-favicons");
+const eleventyPluginPhosphoricons = require("eleventy-plugin-phosphoricons");
 const metagen = require( "eleventy-plugin-metagen" );
 
 module.exports = function( eleventyConfig ) {
@@ -45,6 +46,11 @@ module.exports = function( eleventyConfig ) {
   // helps make it easier to find the categories we want (e.g. presentations)
   // and make a list on the homepage or in a menu that links to each one.
   eleventyConfig.addPlugin(eleventyNavigationPlugin);
+
+  //
+  eleventyConfig.addPlugin(eleventyPluginPhosphoricons, {
+    class: "icon"
+  });
 
   // The metagen plugin adds options to output a whole lot of data to the `head`
   // of the page. This includes info such as the site name, the site title, the
