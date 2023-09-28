@@ -1,7 +1,7 @@
 {
-  "name": "Awesome Speaker",
-  "description": "Speaker's personal site, with blog posts and presentations",
-  "website": "Awesome Speaker's Spectacular Site",
-  "url": "https://example.com",
+  "name": "starwipe",
+  "description": "starwipe is a small little presentation slideslow. It is built with Eleventy (11ty), and uses reveal.js for slide functionality",
+  "website": "starwipe: a small little presentation slideshow",
+  "url": "https://example.com/",
   "favicon": "./source/favicon.png"
 }

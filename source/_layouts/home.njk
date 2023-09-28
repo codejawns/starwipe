@@ -6,17 +6,17 @@ layout: page.njk
     style guide or pages from the output here.
 -#}
 
-<h2>Presentations</h2>
-
 {#- The navigation is set to include all presentations in the source -#}
 {% set nav_presentation = collections.presentation | eleventyNavigation() %}
 
 {%- if nav_presentation -%}
-  <ul>
-    {%- for presentation in nav_presentation %}
-      <li><a href="{{- presentation.url -}}">{{- presentation.title -}}</a></li>
-    {%- endfor %}
-  </ul>
+  <nav class="nav-presentation" aria-label="Sample Presentations">
+    <ul role="list">
+      {%- for presentation in nav_presentation %}
+        <li><a href="{{- presentation.url -}}">{{- presentation.title -}}</a></li>
+      {%- endfor %}
+    </ul>
+  </nav>
 {%- endif -%}
 
 {{- content | safe -}}

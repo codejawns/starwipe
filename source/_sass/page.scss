@@ -43,6 +43,20 @@ a {
   @include u.stack;
 }
 
+.nav-presentation {
+  li {
+    display: inline-block;
+  }
+  a {
+    padding-block: 0.25em;
+    padding-inline: 0.5em;
+    border: 0.125em solid #551B08;
+    border-radius: 0.5em;
+    background: #E8E8E8;
+    text-decoration: none;
+  }
+}
+
 .footer {
-  margin-block-start: auto;
+  margin-block-start: 2rem;
 }
