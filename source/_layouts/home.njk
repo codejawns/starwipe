@@ -1,73 +1,41 @@
 ---
-layout: base.njk
+layout: page.njk
 ---
 
-<header>
-  <h1>{{ title }}</h1>
-</header>
+{{- content | safe -}}
 
-<main class="main">
+{#- Let's list out _only_ the style guide on the site. This will exclude any
+    pages or presentations from the output here.
+-#}
 
-  {{- content | safe -}}
+<h2>Style guide</h2>
 
-  {#-
-      Let's list out _only_ the pages on the site. This will exclude any
-      style guide or presentations from the output here.
-  -#}
+{#- The navigation is set to include only style guide in the source -#}
+{% set nav_guide = collections.guide | eleventyNavigation() %}
 
-  <h2>Site pages</h2>
-
-  {#- The navigation is set to include only pages in the source -#}
-  {% set nav_page = collections.page | eleventyNavigation() %}
-
-  {%- if nav_page -%}
-    <ul>
-      {%- for page in nav_page %}
-        <li><a href="{{- page.url | url -}}">{{- page.title -}}</a></li>
-      {%- endfor %}
-    </ul>
-  {%- endif -%}
-
-    {#-
-      Let's list out _only_ the style guide on the site. This will exclude any
-      pages or presentations from the output here.
-  -#}
-
-  <h2>Style guide</h2>
-
-  {#- The navigation is set to include only style guide in the source -#}
-  {% set nav_guide = collections.guide | eleventyNavigation() %}
-
-  {%- if nav_guide -%}
-    <ul>
-      {%- for guide in nav_guide %}
-        <li><a href="{{- guide.url | url -}}">{{- guide.title -}}</a></li>
-      {%- endfor %}
-    </ul>
-  {%- endif -%}
+{%- if nav_guide -%}
+  <ul>
+    {%- for guide in nav_guide %}
+      <li><a href="{{- guide.url | url -}}">{{- guide.title -}}</a></li>
+    {%- endfor %}
+  </ul>
+{%- endif -%}
 
 
 
-  {#-
-      Let's list out _only_ the presentations on the site. This will exclude any
-      style guide or pages from the output here.
-  -#}
+{#- Let's list out _only_ the presentations on the site. This will exclude any
+    style guide or pages from the output here.
+-#}
 
-  <h2>Presentations</h2>
+<h2>Presentations</h2>
 
-  {#- The navigation is set to include all presentations in the source -#}
-  {% set nav_presentation = collections.presentation | eleventyNavigation() %}
+{#- The navigation is set to include all presentations in the source -#}
+{% set nav_presentation = collections.presentation | eleventyNavigation() %}
 
-  {%- if nav_presentation -%}
-    <ul>
-      {%- for presentation in nav_presentation %}
-        <li><a href="{{- presentation.url | url -}}">{{- presentation.title -}}</a></li>
-      {%- endfor %}
-    </ul>
-  {%- endif -%}
-
-</main>
-
-<footer>
-  <p>{{- site.name }}</p>
-</footer>
+{%- if nav_presentation -%}
+  <ul>
+    {%- for presentation in nav_presentation %}
+      <li><a href="{{- presentation.url | url -}}">{{- presentation.title -}}</a></li>
+    {%- endfor %}
+  </ul>
+{%- endif -%}

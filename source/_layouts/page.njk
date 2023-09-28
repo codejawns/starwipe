@@ -1,0 +1,28 @@
+---
+layout: base.njk
+---
+
+<header>
+  <h1>{{ title }}</h1>
+
+  {#- The navigation is set to include only pages in the source -#}
+  {% set nav_page = collections.page | eleventyNavigation() %}
+
+  {%- if nav_page -%}
+    <nav>
+      <ul>
+        {%- for page in nav_page %}
+          <li><a href="{{- page.url -}}">{{- page.title -}}</a></li>
+        {%- endfor %}
+      </ul>
+    </nav>
+  {%- endif -%}
+</header>
+
+<main class="main">
+  {{ content | safe }}
+</main>
+
+<footer>
+  <p>{{- site.name }}</p>
+</footer>
