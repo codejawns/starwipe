@@ -5,7 +5,7 @@
 - [Background](#background)
 - [Features](#features)
 - [Quick start](#quick-start)
-  - [Project requirements](#project-requirements)
+  - [Requirements](#requirements)
   - [Installation](#installation)
 - [Usage](#usage)
 - [Roadmap](#roadmap)
@@ -16,15 +16,11 @@
 
 What is **starwipe**? _Why_ is **starwipe**?
 
-![David from Schitt’s Creek: What? Why?](dist/images/david-why.gif)
-
 A few years ago, while I was completing my master's degree, I finally told my imposter syndrome to eff off, and I started submitting proposals to conferences. Whelp, now I've spoken at some! Then I found myself using the same base over and over and over again to create each presentation, and thought, "there's got to be a better way!"
 
 So I decided to build something that could reuse similar assets while still incorporating the slideshow library. Now there is **starwipe**, which I want to share with you.
 
 ## Features
-
-![David from Schitt’s Creek: It’s an environment.](dist/images/david-environment.gif)
 
 ✅ webpages built with [11ty](https://www.11ty.dev/)  
 ✅ slideshow functionality from [reveal.js](https://revealjs.com/)  
@@ -33,16 +29,14 @@ So I decided to build something that could reuse similar assets while still inco
 ✅ customizable presentation themes  
 ✅ Nunjucks for writing templates  
 ✅ Markdown for writing slides  
-✅ shortcodes for including images  
+✅ shortcodes for including images and icons  
 ✅ GitHub Pages-ready  
 
 ## Quick start
 
 We got this! Let's go through everything a little bit at a time.
 
-![David from Schitt’s Creek: I know. It’s a lot to process.](dist/images/david-process.gif)
-
-### Project requirements
+### Requirements
 
 **starwipe** assumes you already have **Node** and **npm** installed. If you do not, follow instructions for [downloading and installing Node.js and npm](https://docs.npmjs.com/downloading-and-installing-node-js-and-npm).
 

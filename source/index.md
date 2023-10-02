@@ -1,6 +1,4 @@
 ---
-layout: home.njk
+layout: home
 title: starwipe
 ---
-
-{%- include "content/README.md" -%}
