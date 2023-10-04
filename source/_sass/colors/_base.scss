@@ -1,0 +1,19 @@
+@use "tones" as tone;
+
+$base: (
+  "primary": tone.$primary,
+  "secondary": tone.$secondary,
+  "tertiary": tone.$tertiary,
+  "alert": tone.$alert,
+  "neutral": tone.$neutral
+);
+
+$names: (
+  "primary",
+  "secondary",
+  "tertiary",
+  "alert",
+  "background",
+  "foreground",
+  "outline"
+);

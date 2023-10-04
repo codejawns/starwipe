@@ -1,0 +1,19 @@
+@use "sass:map";
+
+@use "base" as base;
+@use "tones" as tones;
+
+@mixin color-props() {
+  @each $color in base.$names {
+    --color-#{$color}: var(--color-#{$color}-light);
+    --color-#{$color}-alt: var(--color-#{$color}-alt-light);
+  }
+}
+
+@mixin color-tones() {
+  @each $color, $map in base.$base {
+    @each $tone, $value in $map {
+      --color-#{$color}-#{$tone}: #{$value};
+    }
+  }
+}

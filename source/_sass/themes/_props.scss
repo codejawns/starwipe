@@ -1,21 +1,20 @@
 // Include the `color` Sass module.
 @use "sass:color";
 
-// Include our colors, and label is `c` to differentiate from the built-in
-// Sass module.
-@use "colors" as c;
+// Include our colors, and label it `*` since colors are prefixed with `color-`.
+@use "colors" as *;
 
 // The following CSS custom props are copied from the `exposer` partial from
 // reveal.js's style sheets. The defaults here make for a "dark" theme, and the
 // props can be reset at the theme level.
 :root {
   // Background of the presentation.
-  --r-background-color: #{c.$black};
+  --r-background-color: #{$color-background-light};
 
   // Primary body text.
   --r-main-font: serif;
   --r-main-font-size: 2.5rem;
-  --r-main-color: #{c.$white};
+  --r-main-color: #{$color-foreground-light};
 
   // Vertical spacing between blocks of text.
   --r-block-margin: 1.5rem;
@@ -23,7 +22,7 @@
   // Headings.
   --r-heading-margin: 0 0 var(--r-block-margin) 0;
   --r-heading-font: serif;
-  --r-heading-color: #{c.$blue};
+  --r-heading-color: #{$color-primary-light};
   --r-heading-line-height: 1.2;
   --r-heading-letter-spacing: normal;
   --r-heading-text-transform: uppercase;
@@ -41,9 +40,9 @@
   --r-code-font: monospace;
 
   // Links.
-  --r-link-color: #{c.$orange};
-  --r-link-color-hover: #{c.$yellow};
+  --r-link-color: #{$color-secondary-light};
+  --r-link-color-hover: #{$color-secondary-alt-light};
   
-  --r-selection-background-color: #{c.$orange};
-  --r-selection-color: #{c.$blue};
+  --r-selection-background-color: #{$color-tertiary-light};
+  --r-selection-color: #{$color-on-tertiary-light};
 }

@@ -1,31 +1,37 @@
 @use "settings";
 @use "components";
 
-@use "colors" as c;
+@use "colors" as *;
 @use "utilities" as u;
+
+:root {
+  @include color-tokens();
+  @include color-props();
+  @include color-tones();
+}
 
 body {
   display: grid;
   grid-template-rows: auto 1fr auto;
   align-items: start;
   min-block-size: 100vh;
-  background-color: c.$white;
-  color: c.$black;
+  background-color: var(--body-background, var(--color-background));
+  color: var(--body-color, var(--color-foreground));
   font-size: 1.25rem;
 }
 
 h1, h2, h3, h4, h5, h6 {
-  color: c.$on-blue;
+  color: var(--heading-color, var(--color-primary));
 }
 
 a {
-  color: c.$on-orange;
+  color: var(--link-color, var(--color-secondary));
   font-weight: 600;
 
   &:hover,
   &:focus,
   &:active {
-    color: c.$on-white;
+    --link-color: var(--link-hover-color, var(--color-tertiary));
   }
 
   &:focus {
@@ -41,20 +47,6 @@ a {
 
 .main {
   @include u.stack;
-}
-
-.nav-presentation {
-  li {
-    display: inline-block;
-  }
-  a {
-    padding-block: 0.25em;
-    padding-inline: 0.5em;
-    border: 0.125em solid #551B08;
-    border-radius: 0.5em;
-    background: #E8E8E8;
-    text-decoration: none;
-  }
 }
 
 .footer {
