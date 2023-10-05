@@ -13,7 +13,7 @@
   {%- include "global/head.njk" -%}
 </head>
 
-<body>
+<body {% if body_class -%} class="{{- body_class -}}"{%- endif -%}>
 
   {#- We make sure a call to a page's content is included. The content in this
       area may be extended in other layouts, and will provide the bulk of a

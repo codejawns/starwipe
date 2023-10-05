@@ -11,10 +11,6 @@
 }
 
 body {
-  display: grid;
-  grid-template-rows: auto 1fr auto;
-  align-items: start;
-  min-block-size: 100vh;
   background-color: var(--body-background, var(--color-background));
   color: var(--body-color, var(--color-foreground));
   font-size: 1.25rem;
@@ -39,16 +35,4 @@ a {
     outline-offset: 0.125em;
     text-decoration: none;
   }
-}
-
-.header {
-  margin-block-end: 2rem;
-}
-
-.main {
-  @include u.stack;
-}
-
-.footer {
-  margin-block-start: 2rem;
 }

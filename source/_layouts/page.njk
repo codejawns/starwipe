@@ -3,27 +3,33 @@ layout: base.njk
 ---
 
 <header class="header">
-  <a href="/">{{ site.name }}</a>
+  <div class="header-inner">
+    <a href="/">{{ site.name }}</a>
 
-  {#- The navigation is set to include only pages in the source -#}
-  {% set nav_page = collections.page | eleventyNavigation() %}
+    {#- The navigation is set to include only pages in the source -#}
+    {% set nav_page = collections.page | eleventyNavigation() %}
 
-  {%- if nav_page -%}
-    <nav>
-      <ul>
-        {%- for page in nav_page %}
-          <li><a href="{{- page.url -}}">{{- page.title -}}</a></li>
-        {%- endfor %}
-      </ul>
-    </nav>
-  {%- endif -%}
+    {%- if nav_page -%}
+      <nav>
+        <ul>
+          {%- for page in nav_page %}
+            <li><a href="{{- page.url -}}">{{- page.title -}}</a></li>
+          {%- endfor %}
+        </ul>
+      </nav>
+    {%- endif -%}
+  </div>
 </header>
 
 <main class="main">
-  <h1>{{- title -}}</h1>
-  {{ content | safe }}
+  <div class="main-inner">
+    <h1>{{- title -}}</h1>
+    {{ content | safe }}
+  </div>
 </main>
 
 <footer class="footer">
-  <p>{{- site.name }}</p>
+  <div class="footer-inner">
+    <p>{{- site.name }}</p>
+  </div>
 </footer>
