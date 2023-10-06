@@ -1,33 +1,31 @@
 @use "settings";
 @use "components";
 
-@use "colors" as *;
+@use "colors" as c;
 @use "utilities" as u;
 
 :root {
-  @include color-tokens();
-  @include color-props();
-  @include color-tones();
+  @include c.color-tokens();
 }
 
 body {
-  background-color: var(--body-background, var(--color-background));
-  color: var(--body-color, var(--color-foreground));
+  background-color: var(--body-background, var(--background-light));
+  color: var(--body-color, var(--foreground-light));
   font-size: 1.25rem;
 }
 
 h1, h2, h3, h4, h5, h6 {
-  color: var(--heading-color, var(--color-primary));
+  color: var(--heading-color, var(--primary-light));
 }
 
 a {
-  color: var(--link-color, var(--color-secondary));
+  color: var(--link-color, var(--secondary-light));
   font-weight: 600;
 
   &:hover,
   &:focus,
   &:active {
-    --link-color: var(--link-hover-color, var(--color-tertiary));
+    --link-color: var(--link-hover-color, var(--tertiary-light));
   }
 
   &:focus {
