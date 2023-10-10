@@ -60,7 +60,7 @@ module.exports = async function( src, alt, link ) {
   // more flexibility in what images are displayed in the browser.
   const picture = `<picture>${Object.values(metadata).map(imageFormat => {
     return `<source type="${imageFormat[0].sourceType}" srcset="${imageFormat.map(entry => entry.srcset).join(', ')}" sizes="100vw">`;
-  }).join('')}<img src="${imageData.url}" width="${imageData.width}" alt="${alt}" loading="lazy" decoding="async"></picture>`;
+  }).join('')}<img src="${imageData.url}" width="${imageData.width}" alt="${alt}" decoding="async"></picture>`;
 
   // If there is a link, wrap it around the image.
   const image_content = link ? `<a href="${link}">${picture}</a>` : picture;
