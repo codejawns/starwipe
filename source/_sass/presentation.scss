@@ -4,5 +4,9 @@
 @use "theme/simple";
 
 :root {
-  --body-inline-max: auto;
+  --body-inline-max: min(100vw, 100%);
+}
+
+.reveal .slides > section {
+  text-align: start;
 }
