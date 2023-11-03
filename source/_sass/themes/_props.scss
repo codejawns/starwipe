@@ -1,5 +1,7 @@
 @use "colors" as c;
 
+$base-size: 2rem;
+
 // The following CSS custom props are copied from the `exposer` partial from
 // reveal.js's style sheets. The defaults here make for a "dark" theme, and the
 // props can be reset at the theme level.
@@ -9,7 +11,7 @@
 
   // Primary body text.
   --r-main-font: sans-serif;
-  --r-main-font-size: 2.5rem;
+  --r-main-font-size: #{$base-size};
   --r-main-color: #{c.$foreground-light};
 
   // Vertical spacing between blocks of text.
@@ -27,10 +29,14 @@
   --r-heading1-text-shadow: var(--r-heading-text-shadow);
 
   // Heading sizes.
-  --r-heading1-size: 3.77em;
-  --r-heading2-size: 2.11em;
-  --r-heading3-size: 1.55em;
-  --r-heading4-size: 1em;
+  $typescale: 1.2;
+  $headings: 5, 4, 3, 2, 1;
+  $size: $base-size;
+
+  @each $heading in $headings {
+    $size: $size * $typescale;
+    --r-heading#{$heading }-size: #{$size};
+  }
 
   // Code snippets.
   --r-code-font: monospace;
