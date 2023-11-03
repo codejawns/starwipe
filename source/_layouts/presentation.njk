@@ -14,7 +14,22 @@ css: presentation
 
 <div class="reveal">
   <div class="slides">
-    {{ content | safe }}
+    <section data-markdown>
+      <textarea data-template>
+        <h1>{{- title -}}</h1>
+        <p>{{- subtitle -}}</p>
+
+        <p>{{- author -}}<br>
+            {{- organization -}}</p>
+
+        <p><i>{{- conference -}}</i><br>
+            {{- date -}}</p>
+
+        ---
+
+        {{ content | safe }}
+      </textarea>
+    </section>
   </div>
 </div>
 
