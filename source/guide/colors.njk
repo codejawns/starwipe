@@ -1,0 +1,17 @@
+---
+title: Colors
+---
+
+{%- if colors -%}
+  <ul class="guide-colors" role="list">
+    {%- for color in colors -%}
+      <li style="background-color: var(--{{- color.name -}});">
+        <span style="color: var(--on-{{- color.name -}});">{{- color.name -}}</span>
+      </li>
+
+      <li style="background-color: var(--on-{{- color.name -}});">
+        <span style="color: var(--{{- color.name -}});">on-{{- color.name -}}</span>
+      </li>
+    {%- endfor -%}
+  </ul>
+{%- endif -%}

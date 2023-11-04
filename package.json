@@ -1,0 +1,40 @@
+{
+  "name": "starwipe",
+  "version": "1.0.0",
+  "description": "a small little presentation slideshow built with 11ty and reveal.js",
+  "author": "Reed Piernock",
+  "license": "GPL-3.0-only",
+  "homepage": "https://github.com/code-jawns/starwipe#readme",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/code-jawns/starwipe.git"
+  },
+  "bugs": {
+    "url": "https://github.com/code-jawns/starwipe/issues"
+  },
+  "devDependencies": {
+    "@11ty/eleventy": "^2.0.0",
+    "@11ty/eleventy-img": "^3.1.1",
+    "@11ty/eleventy-navigation": "^0.3.5",
+    "@fontsource/public-sans": "^5.0.13",
+    "a11y-color-tokens": "^0.7.0",
+    "eleventy-plugin-gen-favicons": "^1.1.2",
+    "eleventy-plugin-metagen": "^1.7.11",
+    "eleventy-plugin-phosphoricons": "^1.0.1",
+    "npm-run-all": "^4.1.5",
+    "onchange": "^7.1.0",
+    "reveal.js": "^4.4.0",
+    "sass": "^1.69.2"
+  },
+  "scripts": {
+    "refresh": "rm -rf ./docs/ && npm run build:11ty",
+    "watch:tokens": "onchange ./source/_data/color.js -- npm run build:tokens",
+    "build:tokens": "touch ./source/_sass/colors/color-token-contrast.md && npx a11y-color-tokens --no-tokenPrefix --colorTokensPath='./source/_data/colors.js' --outputDirPath='./source/_sass/colors' --compatibilityDocsPath='./source/_sass/colors'",
+    "watch:css": "sass --watch --load-path=./source/_sass --load-path=./node_modules/reveal.js/dist ./source/_sass:./docs/dist/css",
+    "build:css": "sass --load-path=./source/_sass --load-path=./node_modules/reveal.js/dist ./source/_sass:./docs/dist/css",
+    "watch:11ty": "npx @11ty/eleventy --serve",
+    "build:11ty": "npx @11ty/eleventy",
+    "start": "npm-run-all --parallel watch:*",
+    "build": "npm-run-all build:*"
+  }
+}

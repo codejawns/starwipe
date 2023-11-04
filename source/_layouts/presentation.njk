@@ -1,0 +1,36 @@
+---
+layout: base.njk
+css: presentation
+---
+
+{#-
+    Import any macros we want to use in this layout. By using macros, we can
+    include reusable code pieces, and pass optional parameters. First, they need
+    to be imported, before we can call them later.
+-#}
+{%- from "presentation/reveal.njk" import reveal with context -%}
+
+
+
+<div class="reveal">
+  <div class="slides">
+    <section data-markdown>
+      <textarea data-template>
+        <h1 class="presentation-title">{{- title -}}</h1>
+        <p class="presentation-subtitle">{{- subtitle -}}</p>
+
+        <p class="presentation-meta">{{- author -}}<br>
+            {{- organization -}}</p>
+
+        <p class="presentation-meta"><i>{{- conference -}}</i><br>
+            {{- date -}}</p>
+
+        ---
+
+        {{ content | safe }}
+      </textarea>
+    </section>
+  </div>
+</div>
+
+{{- reveal(slides) -}}

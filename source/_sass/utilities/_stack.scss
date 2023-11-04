@@ -1,0 +1,13 @@
+@mixin stack($class: "stack") {
+  display: flex;
+  flex-direction: var(--stack-direction, column);
+  justify-content: flex-start;
+
+  > * {
+    margin-block: 0;
+  }
+
+  > * + * {
+    margin-block-start: var(---stack-margin, 1.5rem);
+  }
+}

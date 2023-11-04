@@ -1,0 +1,25 @@
+{#- The base layout is the file that other layouts may inherit. This includes a
+    pared-down, bare-bones skeleton, that includes the default page `head`, and
+    a call to include content.
+-#}
+
+<!DOCTYPE html>
+<html lang="en">
+
+{#- The base layout includes head content, such as meta information or CSS
+    file references.
+-#}
+<head>
+  {%- include "global/head.njk" -%}
+</head>
+
+<body {% if body_class -%} class="{{- body_class -}}"{%- endif -%}>
+
+  {#- We make sure a call to a page's content is included. The content in this
+      area may be extended in other layouts, and will provide the bulk of a
+      page's content.
+  -#}
+  {{ content | safe }}
+
+</body>
+</html>

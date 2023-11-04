@@ -1,0 +1,307 @@
+{#- Initialize reveal.js for your slides.
+    
+    This macro initializes the reveal.js scripts -- the scripts that make the
+    magic happen! Included here are all the configuration options available for
+    reveal.js. Even though these are all set to the default values defined by
+    the package, they are explicitly set here in order to update them if
+    needed.
+    
+    For example, the default value to display a presentation progress bar is
+    `true`, but if in one presentation you want `true` but in another `false`,
+    those options can be reset in that presentation.
+-#}
+
+{%- macro reveal(slides)-%}
+
+  <script src="/dist/js/reveal.js"></script>
+  <script src="/dist/js/plugin/highlight/highlight.js"></script>
+  <script src="/dist/js/plugin/markdown/markdown.js"></script>
+  <script src="/dist/js/plugin/notes/notes.js"></script>
+
+  <script>
+    Reveal.initialize({
+      // Include reveal.js plugins.
+      plugins: [
+        // Highlight sets up color support for code syntax.
+        RevealHighlight,
+        // Markdown allows you to write your slides with Markdown syntax.
+        RevealMarkdown,
+        // Notes provides speaker notes when presenting to an audience.
+        RevealNotes
+      ],
+      // Below are _all_ the configuration options available for reveal.js.
+      // Comments for each option are copied from the reveal.js documentation,
+      // except where noted with [Note:].
+      // https://revealjs.com/config/
+
+      // Display presentation control arrows
+      controls: {{ slides.controls if slides.controls else true -}},
+
+      // Help the user learn the controls by providing hints, for example by
+      // bouncing the down arrow when they first encounter a vertical slide
+      controlsTutorial: {{ slides.controlsTutorial if slides.controlsTutorial else true -}},
+
+      // Determines where controls appear, "edges" or "bottom-right"
+      controlsLayout: "{{- slides.controlsLayout if slides.controlsLayout else 'bottom-right' -}}",
+
+      // Visibility rule for backwards navigation arrows; "faded", "hidden"
+      // or "visible"
+      controlsBackArrows: "{{- slides.controlsBackArrows if slides.controlsBackArrows else 'faded' -}}",
+
+      // Display a presentation progress bar
+      progress: {{ slides.progress if slides.progress else true -}},
+
+      // Display the page number of the current slide
+      // - true:    Show slide number
+      // - false:   Hide slide number
+      //
+      // Can optionally be set as a string that specifies the number formatting:
+      // - "h.v":   Horizontal . vertical slide number (default)
+      // - "h/v":   Horizontal / vertical slide number
+      // - "c":   Flattened slide number
+      // - "c/t":   Flattened slide number / total slides
+      //
+      // Alternatively, you can provide a function that returns the slide
+      // number for the current slide. The function should take in a slide
+      // object and return an array with one string [slideNumber] or
+      // three strings [n1,delimiter,n2]. See #formatSlideNumber().
+      slideNumber: {{ slides.slideNumber if slides.slideNumber else false -}},
+
+      // Can be used to limit the contexts in which the slide number appears
+      // - "all":      Always show the slide number
+      // - "print":    Only when printing to PDF
+      // - "speaker":  Only in the speaker view
+      showSlideNumber: "{{- slides.showSlideNumber if slides.showSlideNumber else 'all' -}}",
+
+      // Use 1 based indexing for # links to match slide number (default is zero
+      // based)
+      hashOneBasedIndex: {{ slides.hashOneBasedIndex if slides.hashOneBasedIndex else false -}},
+
+      // Add the current slide number to the URL hash so that reloading the
+      // page/copying the URL will return you to the same slide
+      hash: {{ slides.hash if slides.hash else false -}},
+
+      // Flags if we should monitor the hash and change slides accordingly
+      respondToHashChanges: {{ slides.respondToHashChanges if slides.respondToHashChanges else true -}},
+
+      // Enable support for jump-to-slide navigation shortcuts
+      jumpToSlide: {{ slides.jumpToSlide if slides.jumpToSlide else true -}},
+
+      // Push each slide change to the browser history.  Implies `hash: true`
+      history: {{ slides.history if slides.history else false -}},
+
+      // Enable keyboard shortcuts for navigation
+      keyboard: {{ slides.keyboard if slides.keyboard else true -}},
+
+      // Optional function that blocks keyboard events when retuning false
+      //
+      // If you set this to 'focused', we will only capture keyboard events
+      // for embedded decks when they are in focus
+      keyboardCondition: {{ slides.keyboardCondition if slides.keyboardCondition else 'null' -}},
+
+      // Disables the default reveal.js slide layout (scaling and centering)
+      // so that you can use custom CSS layout
+      disableLayout: {{ slides.disableLayout if slides. disableLayout else false -}},
+
+      // Enable the slide overview mode
+      overview: {{ slides.overview if slides.overview else true -}},
+
+      // Vertical centering of slides
+      center: {{ slides.center if slides.center else true -}},
+
+      // Enables touch navigation on devices with touch input
+      touch: {{ slides.touch if slides.touch else true -}},
+
+      // Loop the presentation
+      loop: {{ slides.loop if slides.loop else false -}},
+
+      // Change the presentation direction to be RTL
+      rtl: {{ slides.rtl if slides.rtl else false -}},
+
+      // Changes the behavior of our navigation directions.
+      //
+      // "default"
+      // Left/right arrow keys step between horizontal slides, up/down
+      // arrow keys step between vertical slides. Space key steps through
+      // all slides (both horizontal and vertical).
+      //
+      // "linear"
+      // Removes the up/down arrows. Left/right arrows step through all
+      // slides (both horizontal and vertical).
+      //
+      // "grid"
+      // When this is enabled, stepping left/right from a vertical stack
+      // to an adjacent vertical stack will land you at the same vertical
+      // index.
+      //
+      // Consider a deck with six slides ordered in two vertical stacks:
+      // 1.1    2.1
+      // 1.2    2.2
+      // 1.3    2.3
+      //
+      // If you're on slide 1.3 and navigate right, you will normally move
+      // from 1.3 -> 2.1. If "grid" is used, the same navigation takes you
+      // from 1.3 -> 2.3.
+      navigationMode: "{{ slides.navigationMode if slides.navigationMode else 'default' -}}",
+
+      // Randomizes the order of slides each time the presentation loads
+      shuffle: {{ slides.shuffle if slides.shuffle else false -}},
+
+      // Turns fragments on and off globally
+      fragments: {{ slides.fragments if slides.flagments else true -}},
+
+      // Flags whether to include the current fragment in the URL,
+      // so that reloading brings you to the same fragment position
+      fragmentInURL: {{ slides.fragmentInURL if slides.fragmentInURL else true -}},
+
+      // Flags if the presentation is running in an embedded mode,
+      // i.e. contained within a limited portion of the screen
+      embedded: {{ slides.embedded if slides.embedded else false -}},
+
+      // Flags if we should show a help overlay when the question-mark
+      // key is pressed
+      help: {{ slides.help if slides.help else true -}},
+
+      // Flags if it should be possible to pause the presentation (blackout)
+      pause: {{ slides.pause if slides.pause else true -}},
+
+      // Flags if speaker notes should be visible to all viewers
+      showNotes: {{ slides.showNotes if slides.showNotes else false -}},
+
+      // Global override for autolaying embedded media (video/audio/iframe)
+      // - null:   Media will only autoplay if data-autoplay is present
+      // - true:   All media will autoplay, regardless of individual setting
+      // - false:  No media will autoplay, regardless of individual setting
+      autoPlayMedia: {{ slides.autoPlayMedia if slides.autoPlayMedia else 'null' -}},
+
+      // Global override for preloading lazy-loaded iframes
+      // - null:   Iframes with data-src AND data-preload will be loaded when
+      //           within the viewDistance, iframes with only data-src will be
+      //           loaded when visible
+      // - true:   All iframes with data-src will be loaded when within the
+      //           viewDistance
+      // - false:  All iframes with data-src will be loaded only when visible
+      preloadIframes: {{ slides.preloadIframes if slides.preloadIframes else 'null' -}},
+
+      // Can be used to globally disable auto-animation
+      autoAnimate: {{ slides.autoAnimate if slides.autoAnimate else true -}},
+
+      // Optionally provide a custom element matcher that will be
+      // used to dictate which elements we can animate between.
+      autoAnimateMatcher: {{ slides.autoAnimateMatcher if slides.autoAnimateMatcher else 'null' -}},
+
+      // Default settings for our auto-animate transitions, can be
+      // overridden per-slide or per-element via data arguments
+      autoAnimateEasing: "{{ slides.autoAnimateEasing if slides.autoAnimateEasing else 'ease' -}}",
+      autoAnimateDuration: {{ slides.autoAnimateDuration if slides.autoAnimateDuration else 1.0 -}},
+      autoAnimateUnmatched: {{ slides.autoAnimateUnmatched if slides.autoAnimateUnmatched else true -}},
+
+      // CSS properties that can be auto-animated. Position & scale
+      // is matched separately so there's no need to include styles
+      // like top/right/bottom/left, width/height or margin.
+      autoAnimateStyles: {{ slides.autoAnimateStyles if slides.autoAnimateStyles else "[
+        'opacity',
+        'color',
+        'background-color',
+        'padding',
+        'font-size',
+        'line-height',
+        'letter-spacing',
+        'border-width',
+        'border-color',
+        'border-radius',
+        'outline',
+        'outline-offset'
+      ]" | safe -}},
+
+      // Controls automatic progression to the next slide
+      // - 0:      Auto-sliding only happens if the data-autoslide HTML
+      //           attribute is present on the current slide or fragment
+      // - 1+:     All slides will progress automatically at the given interval
+      // - false:  No auto-sliding, even if data-autoslide is present
+      autoSlide: {{ slides.autoSlide if slides.autoSlide else 0 -}},
+
+      // Stop auto-sliding after user input
+      autoSlideStoppable: {{ slides.autoSlideStoppable if slides.autoSlideStoppable else true -}},
+
+      // Use this method for navigation when auto-sliding (defaults to navigateNext)
+      autoSlideMethod: {{slides.autoSlideMethod if slides.autoSlideMethod else 'null' -}},
+
+      // Specify the average time in seconds that you think you will spend
+      // presenting each slide. This is used to show a pacing timer in the
+      // speaker view
+      defaultTiming: {{ slides.defaultTiming if slides.defaultTiming else 'null' -}},
+
+      // [Note:]
+      // Since the Speaker Notes plugin is enabled, the total time of the
+      // presentation can be set, instead of the timing per slide. Total time
+      // wins over Default Timing. Timing is calulated in seconds, but we really
+      // often think of presentation slots in minutes, so this will accept a
+      // value for minutes, then multiply that by 60 (the number of seconds in
+      // one minute).
+      totalTime: ({{ slides.totalTime if slides.totalTime else 30 }} * 60),
+
+      // Enable slide navigation via mouse wheel
+      mouseWheel: {{ slides.mouseWheel if slides.mouseWheel else false -}},
+
+      // Opens links in an iframe preview overlay
+      // Add `data-preview-link` and `data-preview-link="false"` to customise
+      // each link individually
+      previewLinks: {{ slides.previewLinks if slides.previewLinks else false -}},
+
+      // Exposes the reveal.js API through window.postMessage
+      postMessage: {{ slides.postMessage if slides.postMessage else true -}},
+
+      // Dispatches all reveal.js events to the parent window through postMessage
+      postMessageEvents: {{ slides.postMessageEvents if slides.postMessageEvents else false -}},
+
+      // Focuses body when page changes visibility to ensure keyboard shortcuts
+      // work
+      focusBodyOnPageVisibilityChange: {{ slides.focusBodyOnPageVisibilityChange if slides.focusBodyOnPageVisibilityChange else true -}},
+
+      // Transition style
+      // none/fade/slide/convex/concave/zoom
+      transition: "{{ slides.transition if slides.transition else 'slide' -}}",
+
+      // Transition speed
+      // default/fast/slow
+      transitionSpeed: "{{ slides.transitionSpeed if slides.transitionSpeed else 'default' -}}",
+
+      // Transition style for full page slide backgrounds
+      // none/fade/slide/convex/concave/zoom
+      backgroundTransition: "{{ slides.backgroundTransition if slides.backgroundTransition else 'fade' -}}",
+
+      // The maximum number of pages a single slide can expand onto when
+      // printing to PDF, unlimited by default
+      pdfMaxPagesPerSlide: {{ slides.pdfMaxPagesPerSlide if slides.pdfMaxPagesPerSlide else 'Number.POSITIVE_INFINITY' -}},
+
+      // Prints each fragment on a separate slide
+      pdfSeparateFragments: {{ slides.pdfSeparateFragments if slides.pdfSeparateFragments else true -}},
+
+      // Offset used to reduce the height of content within exported PDF pages.
+      // This exists to account for environment differences based on how you
+      // print to PDF. CLI printing options, like phantomjs and wkpdf, can end
+      // on precisely the total height of the document whereas in-browser
+      // printing has to end one pixel before.
+      pdfPageHeightOffset: {{ slides.pdfPageHeightOffset if slides.pdfPageHeightOffset else -1 -}},
+
+      // Number of slides away from the current that are visible
+      viewDistance: {{ slides.viewDistance if slides.viewDistance else 3 -}},
+
+      // Number of slides away from the current that are visible on mobile
+      // devices. It is advisable to set this to a lower number than
+      // viewDistance in order to save resources.
+      mobileViewDistance: {{ slides.mobileViewDistance if slides.mobileViewDistance else 2 -}},
+
+      // The display mode that will be used to show slides
+      display: "{{ slides.display if slides.display else 'block' -}}",
+
+      // Hide cursor if inactive
+      hideInactiveCursor: {{ slides.hideInactiveCursor if slides.hideInactiveCursor else true -}},
+
+      // Time before the cursor is hidden (in ms)
+      hideCursorTime: {{ slides.hideCursorTime if slides.hideCursorTime else 5000 -}}
+    });
+  </script>
+
+{%- endmacro -%}

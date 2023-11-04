@@ -1,0 +1,26 @@
+@use "settings/reset";
+
+@use "reveal";
+@use "theme/simple";
+
+:root {
+  --body-inline-max: min(100vw, 100%);
+
+  --presentation-title-space: 2vmin;
+  --presentation-title-border: currentColor;
+}
+
+.reveal .slides > section {
+  text-align: start;
+}
+
+.presentation-meta {
+  font-size: 1.5rem;
+
+  .presentation-title + &,
+  .presentation-subtitle + & {
+    margin-block-start: var(--presentation-title-space);
+    padding-block-start: var(--presentation-title-space);
+    border-block-start: 2px solid var(--presentation-title-border);
+  }
+}
