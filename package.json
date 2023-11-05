@@ -14,17 +14,17 @@
   },
   "devDependencies": {
     "@11ty/eleventy": "^2.0.0",
-    "@11ty/eleventy-img": "^3.1.1",
+    "@11ty/eleventy-img": "^3.1.8",
     "@11ty/eleventy-navigation": "^0.3.5",
-    "@fontsource/public-sans": "^5.0.13",
+    "@fontsource/public-sans": "^5.0.15",
     "a11y-color-tokens": "^0.7.0",
     "eleventy-plugin-gen-favicons": "^1.1.2",
-    "eleventy-plugin-metagen": "^1.7.11",
+    "eleventy-plugin-metagen": "^1.8.3",
     "eleventy-plugin-phosphoricons": "^1.0.1",
     "npm-run-all": "^4.1.5",
     "onchange": "^7.1.0",
-    "reveal.js": "^4.4.0",
-    "sass": "^1.69.2"
+    "reveal.js": "^5.0.1",
+    "sass": "^1.69.5"
   },
   "scripts": {
     "refresh": "rm -rf ./docs/ && npm run build:11ty",
