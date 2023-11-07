@@ -14,7 +14,10 @@
   text-align: start;
 }
 
+
+
 .presentation-meta {
+  color: var(--presentation-meta-color, inherit);
   font-size: 1.5rem;
 
   .presentation-title + &,
@@ -23,4 +26,9 @@
     padding-block-start: var(--presentation-title-space);
     border-block-start: 2px solid var(--presentation-title-border);
   }
+}
+
+.presentation-title,
+.presentation-subtitle {
+  text-wrap: balance;
 }
