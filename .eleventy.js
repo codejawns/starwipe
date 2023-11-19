@@ -78,7 +78,8 @@ module.exports = function( eleventyConfig ) {
   eleventyConfig.addAsyncShortcode( "image", require("./source/_config/shortcodes/image.js") );
 
   // Add date filters to make it a little easier to write dates.
-  eleventyConfig.addFilter( "date", require("./source/_config/filters/date.js") );
+  eleventyConfig.addFilter( "dateLong", require("./source/_config/filters/date-long.js") );
+  eleventyConfig.addFilter( "dateShort", require("./source/_config/filters/date-short.js") );
 
   return {
     // The templates here are written using Nunjucks. Any HTML or Markdown will
