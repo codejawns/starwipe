@@ -1,7 +1,5 @@
-# Development files.
-.cache
-.env
-node_modules
+# The final built, compiled site.
+docs
 
 # The accessible color lists. They are copied when the project is initialized,
 # so they do not need to be committed. Only the data file and the index file
@@ -12,7 +10,14 @@ node_modules
 # propject is initialized, and when there is a change to the file, so it does
 # not need to be committed. Only the README.md at the root of the project is
 # committed.
-/source/_includes/**/README.md
+source/_includes/**/README.md
 
-# The final built, compiled site.
-docs
+# Development files.
+.cache
+.env
+node_modules
+
+# macOS hidden files.
+.DS_Store
+._*
+Thumbs.db
