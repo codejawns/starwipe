@@ -92,8 +92,10 @@ module.exports = function( eleventyConfig ) {
     // If your starwipe-fueled website is hosted on GitHub Pages, then it very
     // most likely lives in a directory that's not at the top level. Using the
     // `pathPrefix` option allows you to keep your local directory structure
-    // however you'd like, then deploy to a directory on the hosted site.
-    pathPrefix: "/starwipe/",
+    // however you'd like, then deploy to a directory on the hosted site. If
+    // this is your case, uncomment the following line and update the path
+    // prefix to your project name.
+    // pathPrefix: "/starwipe/",
     
     // This defines the directory for each aspect of an 11ty project.
     dir: {
