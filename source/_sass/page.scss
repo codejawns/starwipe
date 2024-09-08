@@ -9,23 +9,23 @@
 }
 
 body {
-  background-color: var(--body-background, var(--background-light));
-  color: var(--body-color, var(--foreground-light));
+  background-color: var(--body-background, var(--background));
+  color: var(--body-color, var(--foreground));
   font-size: 1.25rem;
 }
 
 h1, h2, h3, h4, h5, h6 {
-  color: var(--heading-color, var(--primary-light));
+  color: var(--heading-color, var(--primary));
 }
 
 a {
-  color: var(--link-color, var(--secondary-light));
+  color: var(--link-color, var(--secondary));
   font-weight: 600;
 
   &:hover,
   &:focus,
   &:active {
-    --link-color: var(--link-hover-color, var(--tertiary-light));
+    --link-color: var(--link-hover-color, var(--tertiary));
   }
 
   &:focus {

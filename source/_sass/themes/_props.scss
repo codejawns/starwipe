@@ -7,12 +7,12 @@ $base-size: 2rem;
 // props can be reset at the theme level.
 :root {
   // Background of the presentation.
-  --r-background-color: #{c.$background-light};
+  --r-background-color: #{c.$background};
 
   // Primary body text.
   --r-main-font: sans-serif;
   --r-main-font-size: #{$base-size};
-  --r-main-color: #{c.$foreground-light};
+  --r-main-color: #{c.$foreground};
 
   // Vertical spacing between blocks of text.
   --r-block-margin: 1.5rem;
@@ -20,7 +20,7 @@ $base-size: 2rem;
   // Headings.
   --r-heading-margin: 0 0 var(--r-block-margin) 0;
   --r-heading-font: serif;
-  --r-heading-color: #{c.$primary-light};
+  --r-heading-color: #{c.$primary};
   --r-heading-line-height: 1.2;
   --r-heading-letter-spacing: normal;
   --r-heading-text-transform: uppercase;
@@ -42,9 +42,9 @@ $base-size: 2rem;
   --r-code-font: monospace;
 
   // Links.
-  --r-link-color: #{c.$secondary-light};
-  --r-link-hover: #{c.$tertiary-light};
+  --r-link-color: #{c.$secondary};
+  --r-link-hover: #{c.$tertiary};
   
-  --r-selection-background-color: #{c.$neutral-light};
-  --r-selection-color: #{c.$on-neutral-light};
+  --r-selection-background-color: #{c.$neutral};
+  --r-selection-color: #{c.$on-neutral};
 }
