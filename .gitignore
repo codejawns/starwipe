@@ -1,16 +1,4 @@
-# The final built, compiled site.
 docs
-
-# The accessible color lists. They are copied when the project is initialized,
-# so they do not need to be committed. Only the data file and the index file
-# are committed.
-*color-token*.*
-
-# The README.md copied to the includes for the homepage. This is copied when the
-# propject is initialized, and when there is a change to the file, so it does
-# not need to be committed. Only the README.md at the root of the project is
-# committed.
-source/_includes/**/README.md
 
 # Development files.
 .cache
