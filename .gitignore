@@ -1,4 +1,10 @@
-docs
+# The final built website.
+site
+
+# Colors are generated when Sass build scripts are run, so we don't need to
+# include those files.
+source/_scss/colors/**/_tokens.scss
+source/_scss/colors/**/color-token-contrast.md
 
 # Development files.
 .cache
