@@ -1,0 +1,14 @@
+@use "global/colors/base" as baseColor;
+
+:root {
+  // Custom properties for the reveal.js main containers.
+  --reveal-backgroundColor: #{baseColor.$light};
+  --reveal-color: #{baseColor.$dark};
+  --reveal-fontWeight: 400;
+  --reveal-fontFamily: Georgia, 'Times New Roman', Times, serif;
+  --reveal-fontSize: 2rem;
+
+  // Custom properties for reveal.js slides.
+  --reveal-slides-fontWeight: inherit;
+  --reveal-slides-lineHeight: 1.3;
+}

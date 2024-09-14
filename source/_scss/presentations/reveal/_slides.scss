@@ -1,0 +1,5 @@
+.reveal .slides section,
+.reveal .slides section>section {
+  font-weight: var(--reveal-slides-fontWeight);
+  line-height: var(--reveal-slides-lineHeight);
+}

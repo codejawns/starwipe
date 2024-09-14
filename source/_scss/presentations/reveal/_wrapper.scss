@@ -1,0 +1,14 @@
+@use "global/colors/base" as baseColor;
+
+// mostly a copy of the default reveal css, but optimized for newer Sass features.
+
+.reveal-viewport {
+  background-color: var(--reveal-backgroundColor);
+  color: var(--reveal-color);
+}
+
+.reveal {
+  font-family: var(--reveal-fontFamily);
+  font-size: var(--reveal-fontSize);
+  font-weight: var(--reveal-fontWeight);
+}

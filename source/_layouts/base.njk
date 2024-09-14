@@ -10,11 +10,13 @@
     file references.
 -#}
 <head>
-  <link href="/_assets/css/main.css" rel="stylesheet" media="screen">
-
   {%- if theme -%}
-    <link href="/_assets/css/themes/{{ theme }}.css" rel="stylesheet" media="screen">
+    <link href="/_assets/css/presentations/base.css" rel="stylesheet" media="screen">
+    <link href="/_assets/css/presentaions/themes/{{ theme }}.css" rel="stylesheet" media="screen">
+  {%- else -%}
+    <link href="/_assets/css/pages/pages.css" rel="stylesheet" media="screen">
   {%- endif -%}
+
 </head>
 
 <body {% if body_class -%} class="{{- body_class -}}"{%- endif -%}>
