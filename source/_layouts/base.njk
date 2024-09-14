@@ -10,6 +10,11 @@
     file references.
 -#}
 <head>
+  <link href="/_assets/css/main.css" rel="stylesheet" media="screen">
+
+  {%- if theme -%}
+    <link href="/_assets/css/themes/{{ theme }}.css" rel="stylesheet" media="screen">
+  {%- endif -%}
 </head>
 
 <body {% if body_class -%} class="{{- body_class -}}"{%- endif -%}>

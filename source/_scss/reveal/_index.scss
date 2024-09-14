@@ -1,0 +1,20 @@
+@use "colors/base" as baseColor;
+
+// mostly a copy of the default reveal css, but optimized for newer Sass features.
+
+.reveal-viewport {
+  background-color: var(--reveal-backgroundColor, var(--reveal-color-light, #{baseColor.$light}));
+  color: var(--reveal-color, var(--reveal-color-primary, #{baseColor.$dark}));
+}
+
+.reveal {
+  font-family: Georgia, 'Times New Roman', Times, serif;
+  font-size: var(--reveal-fontSize, 2rem);
+  font-weight: var(--reveal-fontWeight, 400);
+}
+
+.reveal .slides section,
+.reveal .slides section>section {
+  font-weight: inherit;
+  line-height: 1.3;
+}

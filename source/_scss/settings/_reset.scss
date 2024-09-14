@@ -1,0 +1,96 @@
+/*
+ * Base style reset.
+ *
+ * Reset inspired by Andy Bell, "A More Modern CSS Reset".
+ * https://piccalil.li/blog/a-more-modern-css-reset/
+ */
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  -moz-text-size-adjust: none;
+  -webkit-text-size-adjust: none;
+  text-size-adjust: none;
+}
+
+// Set core body defaults.
+body {
+  min-block-size: 100vh;
+  padding: 0;
+  margin: 0;
+}
+
+// Remove default margin in favour of better control in authored CSS.
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+ol,
+ul,
+figure,
+blockquote,
+dl,
+dd {
+  margin-block-end: 0;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 
+{
+  text-wrap: balance;
+}
+
+a {
+  color: var(--link-color, inherit);
+  text-decoration: var(--link-textDecoration, underline);
+
+  &:active,
+  &:focus {
+    outline-width: var(--link-outlineWidth, 0.125em);
+    outline-style: var(--link-outlineStyle, solid);
+    outline-color: var(--link-outlineColor, currentColor);
+    outline-offset: var(--link-outlineOffset, 0.125em);
+    text-decoration: none;
+  }
+}
+
+img,
+picture,
+svg {
+  display: block;
+  block-size: auto;
+  max-inline-size: 100%;
+}
+
+button,
+input,
+label {
+  line-height: 1;
+}
+
+button,
+input,
+textarea,
+select {
+  font: inherit;
+}
+
+textarea:not([rows]) {
+  min-inline-size: 10em;
+}
+
+:target {
+  scroll-margin-block: 5ex;
+}
