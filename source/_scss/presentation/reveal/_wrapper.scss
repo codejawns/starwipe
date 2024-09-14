@@ -8,7 +8,7 @@
 }
 
 .reveal {
-  font-family: var(--reveal-fontFamily);
-  font-size: var(--reveal-fontSize);
   font-weight: var(--reveal-fontWeight);
+  font-family: var(--reveal-fontFamily-sansSerif), var(--reveal-fontFamily-sansSerifStack);
+  font-size: var(--reveal-fontSize);
 }
