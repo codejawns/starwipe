@@ -2,9 +2,13 @@
 const {EleventyHtmlBasePlugin} = require('@11ty/eleventy');
 const eleventyNavigationPlugin = require('@11ty/eleventy-navigation');
 
+const filters = require('./source/_config/filters/index.js');
+
 module.exports = function(eleventyConfig) {
   eleventyConfig.addPlugin(EleventyHtmlBasePlugin);
   eleventyConfig.addPlugin(eleventyNavigationPlugin);
+
+  eleventyConfig.addPlugin(filters);
 
     // Return our entire 11ty configuration.
   return {
