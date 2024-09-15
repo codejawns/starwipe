@@ -1,3 +1,12 @@
+@forward "../../../node_modules/reveal.js/css/layout";
+@forward "../../../node_modules/reveal.js/css/reveal";
+
 @forward "reveal/props";
 @forward "reveal/wrapper";
 @forward "reveal/slides";
+@forward "reveal/media";
+@forward "reveal/links";
+@forward "reveal/headings";
+@forward "reveal/text";
+@forward "reveal/preformatted";
+@forward "reveal/table";

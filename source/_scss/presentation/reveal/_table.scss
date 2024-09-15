@@ -1,0 +1,16 @@
+.reveal {
+  table {
+    margin-block: var(--reveal-table-marginBlock);
+    margin-inline: var(--reveal-table-marginInline);
+    border-collapse: collapse;
+  }
+
+  th, td {
+    border-width: var(--reveal-table-borderWidth);
+    border-style: var(--reveal-table-borderStyle);
+    border-color: var(--reveal-table-borderColor);
+    padding-block: var(--reveal-tableCell-paddingBlock);
+    padding-inline: var(--reveal-tableCell-paddingInline);
+    text-align: left;
+  }
+}

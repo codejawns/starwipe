@@ -1,0 +1,24 @@
+.reveal {
+  pre {
+    display: block;
+    inline-size: min(90%, 90vw);
+    margin-block: var(--reveal-pre-marginBlock);
+    margin-inline: var(--reveal-pre-marginInline);
+    font-size: 0.55em;
+    line-height: 1.2;
+    font-family: var(--reveal-pre-fontFamily);
+    text-align: left;
+    word-wrap: break-word;
+  }
+
+  code {
+    font-family: var(--reveal-code-fontFamily);
+  }
+
+  pre code {
+    overflow: auto;
+    display: block;
+    max-block-size: min(70%, 70vh);
+    word-wrap: normal;
+  }
+}
