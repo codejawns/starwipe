@@ -1,0 +1,16 @@
+@use "global/colors/light" as color;
+
+:root {
+  --reveal-backgroundColor: #{color.$light};
+  --reveal-color: #{color.$dark};
+
+  --reveal-link-color: #{color.$primary};
+  --reveal-link-color-hover: #{color.$on-light};
+
+  --reveal-heading-color: #{color.$primary};
+  --reveal-heading-fontWeight: 700;
+}
+
+.presentation-title {
+  border-block-end: 0.25em solid color.$secondary;
+}
