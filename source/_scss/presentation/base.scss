@@ -1,6 +1,8 @@
-@forward "../../../node_modules/reveal.js/css/layout";
-@forward "../../../node_modules/reveal.js/css/reveal";
+// Forward the layout and slideshow styles from reveal.js.
+@forward "layout";
+@forward "reveal";
 
+// Forward the base theme styles.
 @forward "reveal/props";
 @forward "reveal/wrapper";
 @forward "reveal/slides";

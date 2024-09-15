@@ -29,8 +29,8 @@ module.exports = {
 
      // Scripts for building CSS files.
     css: {
-      build: 'sass --load-path=./source/_scss --style=compressed --no-source-map ./source/_scss:./site/_assets/css',
-      watch: 'sass --watch --load-path=./source/_scss ./source/_scss:./site/_assets/css'
+      build: 'sass --load-path=./source/_scss --load-path=./node_modules/reveal.js/css --style=compressed --no-source-map ./source/_scss:./site/_assets/css',
+      watch: 'sass --watch --load-path=./source/_scss --load-path=./node_modules/reveal.js/css ./source/_scss:./site/_assets/css'
     },
 
     // Scripts for the static site.
