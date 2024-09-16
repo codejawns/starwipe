@@ -1,0 +1,20 @@
+.reveal {
+  p {
+    margin-block: var(--reveal-paragraph-marginBlock);
+    margin-inline: var(--reveal-paragraph-marginInline);
+    line-height: var(--reveal-paragraph-lineHeight);
+  }
+
+  dl, ol, ul {
+    display: inline-block;
+    margin-block: var(--reveal-list-marginBlock);
+    margin-inline: var(--reveal-list-marginInline);
+    text-align: left;
+  }
+
+  blockquote {
+    inline-size: var(--reveal-blockquote-inlineSize);
+    margin-block: var(--reveal-blockquote-marginBlock);
+    margin-inline: var(--reveal-blockquote-marginInline);
+  }
+}

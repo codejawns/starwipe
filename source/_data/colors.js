@@ -1,58 +1,29 @@
+// Color palette created by Reed.
+// https://coolors.co/02043b-519872-f9c667-f9e9dc-43383f
 module.exports = [
   {
-    name: "primary-light",
-    color: "#006685"
+    // Penn Blue
+    name: 'primary',
+    color: 'hsla(238, 93%, 12%, 1)'
   },
   {
-    name: "secondary-light",
-    color: "#006a60"
+    // Sea Green
+    name: 'secondary',
+    color: 'hsla(148, 30%, 46%, 1)'
   },
   {
-    name: "tertiary-light",
-    color: "#7f5700"
+    // Xanthous
+    name: 'tertiary',
+    color: 'hsla(39, 92%, 69%, 1)'
   },
   {
-    name: "error-light",
-    color: "#ac303b"
+    // Linen
+    name: 'background',
+    color: 'hsla(27, 71%, 92%, 1)'
   },
   {
-    name: "neutral-light",
-    color: "#181212"
-  },
-  {
-    name: "background-light",
-    color: "#fffbff"
-  },
-  {
-    name: "foreground-light",
-    color: "#201a1a"
-  },
-  {
-    name: "primary-dark",
-    color: "#6bd3ff"
-  },
-  {
-    name: "secondary-dark",
-    color: "#54dcca"
-  },
-  {
-    name: "tertiary-dark",
-    color: "#fbbb4a"
-  },
-  {
-    name: "error-dark",
-    color: "#ffb3b2"
-  },
-  {
-    name: "neutral-dark",
-    color: "#e4d7d7"
-  },
-  {
-    name: "background-dark",
-    color: "#201a1a"
-  },
-  {
-    name: "foreground-dark",
-    color: "#ece0df"
+    // Van Dyke
+    name: 'foreground',
+    color: 'hsla(322, 9%, 24%, 1)'
   }
 ]

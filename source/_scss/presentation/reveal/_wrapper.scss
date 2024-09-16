@@ -1,0 +1,30 @@
+@use "global/colors/base" as baseColor;
+
+// mostly a copy of the default reveal css, but optimized for newer Sass features.
+
+.reveal-viewport {
+  background-color: var(--reveal-backgroundColor);
+  color: var(--reveal-color);
+}
+
+.reveal {
+  font-weight: var(--reveal-fontWeight);
+  font-family: var(--reveal-fontFamily-sansSerif), var(--reveal-fontFamily-sansSerifStack);
+  font-size: var(--reveal-fontSize);
+}
+
+.reveal {
+  .r-frame {
+    border-width: 4px;
+    border-style: solid;
+    border-color: var(--reveal-rFrame-borderColor);
+  }
+
+  a .r-frame {
+    transition: all var(--reveal-rFrame-transitionTime) linear;
+  }
+
+  a:hover .r-frame {
+    border-color: var(--reveal-rFrame-hover-borderColor);
+  }
+}

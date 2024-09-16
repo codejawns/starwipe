@@ -1,0 +1,20 @@
+{#- Now that we have our CSS ready, we can include the `metagen` plugin! The
+    `metagen` plugin assists with more easily outputing head meta information,
+    such as the page title, author, site description, canonical URL, etc. Some
+    of this data is set in the `site.js` data file, and some of this is set at
+    the page level. 
+-#}
+{%- metagen
+  name = site.name,
+  desc = site.description,
+  site_name = site.website,
+  title = title + ": " + site.website,
+  url = site.url + page.url,
+  generator = "eleventy",
+  css = css_files
+-%}
+
+{#- The `favicon` plugin will accept a link to the site's favicon. The
+    settings for this plugin are defined in the `eleventy.js` file.
+-#}
+{%- favicons site.favicon -%}

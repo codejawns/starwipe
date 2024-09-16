@@ -1,0 +1,13 @@
+.reveal {
+  img,
+  svg,
+  video,
+  iframe {
+    max-block-size: var(--reveal-media-maxBlockSize);
+  }
+
+  img,
+  svg {
+    margin-block: var(--reveal-img-marginBlock);
+  }
+}

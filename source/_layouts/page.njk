@@ -7,12 +7,12 @@ layout: base.njk
     <a href="/">{{ site.name }}</a>
 
     {#- The navigation is set to include only pages in the source -#}
-    {% set nav_page = collections.page | eleventyNavigation() %}
+    {% set pages = collections.page | eleventyNavigation() %}
 
-    {%- if nav_page -%}
+    {%- if pages -%}
       <nav>
         <ul>
-          {%- for page in nav_page %}
+          {%- for page in pages %}
             <li><a href="{{- page.url -}}">{{- page.title -}}</a></li>
           {%- endfor %}
         </ul>
@@ -31,5 +31,7 @@ layout: base.njk
 <footer class="footer">
   <div class="footer-inner">
     <p>{{- site.name }}</p>
+    <p>Reed Piernock, <a href="https://reedcodes.com/">ReedCodes.com</a></p>
+    <p><a href="https://github.com/codejawns/starwipe">Check the project on GitHub</a>.</p>
   </div>
 </footer>
