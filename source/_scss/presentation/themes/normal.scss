@@ -1,0 +1,16 @@
+@use "global/colors/normal" as color;
+
+:root {
+  --reveal-backgroundColor: #{color.$primary};
+  --reveal-color: #{color.$light};
+
+  --reveal-link-color: #{color.$on-primary};
+  --reveal-link-color-hover: #{color.$on-light};
+
+  --reveal-heading-color: #{color.$secondary};
+  --reveal-heading-fontWeight: 700;
+}
+
+.presentation-title {
+  border-block-end: 0.25em solid color.$accent;
+}

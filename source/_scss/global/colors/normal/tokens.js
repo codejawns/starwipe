@@ -1,22 +1,22 @@
 module.exports = [
   {
     name: "primary",
-    color: "#020446ff"
+    color: "#5A1400ff"
   },
   {
     name: "secondary",
-    color: "#519872ff"
+    color: "#F9C400ff"
   },
   {
     name: "accent",
-    color: "#f9c667ff"
+    color: "#7A7666ff"
   },
   {
     name: "light",
-    color: "#f9e9dcff"
+    color: "#FFF7D6ff"
   },
   {
     name: "dark",
-    color: "#43383fff"
+    color: "#000F08ff"
   }
 ];
