@@ -1,7 +1,0 @@
-{
-  "name": "starwipe",
-  "description": "starwipe is a small little presentation slideslow. It is built with Eleventy (11ty), and uses reveal.js for slide functionality",
-  "website": "starwipe: a small little presentation slideshow",
-  "url": "https://example.com/",
-  "favicon": "./source/favicon.png"
-}

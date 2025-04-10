@@ -1,0 +1,4 @@
+scripts:
+  site:
+    build: "npx @11ty/eleventy --quiet"
+    watch: "npx @11ty/eleventy --quiet --serve"
