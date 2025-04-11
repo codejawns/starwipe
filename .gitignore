@@ -1,12 +1,22 @@
-# The final built, compiled site.
-site
+# Since 11ty generates the whole thing, the `/site` directory does not need
+# to be committed to the repository. HOWEVER, if you are using GitHub pages,
+# or if you would prefer to commit the final built site to your repository,
+# remove the following line, or comment it out.
+/site
 
-# Development files.
+# These files are generated on `npm install` and are not part of the starwipe
+# repository. HOWEVER, you may want to commit your talks in YOUR repository.
+# In that case, you should remove the following lines, or comment them out.
+# That way, your presentations are part of your repo!
+/source/index.md
+/source/presentation/**/
+
+# Do not commit common development files.
 .cache
 .env
 node_modules
 
-# macOS hidden files.
+# Do not commit comment macOS hidden files.
 .DS_Store
 ._*
 Thumbs.db

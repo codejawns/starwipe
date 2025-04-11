@@ -1,4 +1,5 @@
 scripts:
+  prepare: "cp -r ./source/_sample/* ./source/"
   site:
     build: "npx @11ty/eleventy --quiet"
     watch: "npx @11ty/eleventy --quiet --serve"
