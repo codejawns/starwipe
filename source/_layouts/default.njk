@@ -1,0 +1,21 @@
+<!doctype html>
+<html>
+
+<head>
+  {%- metagen
+      name = site.name,
+      site_name = site.website,
+      title = title + " [" + site.website + "]",
+      url = site.url + page.url,
+      generator = "eleventy",
+      comments = false,
+      css = ["/_assets/css/style.css"]
+  -%}
+
+  {% favicons './source/_images/favicon.png' %}
+</head>
+
+<body class="site {{ pageClass -}}">
+  {{ content | safe }}
+</body>
+</html>
