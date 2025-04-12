@@ -11,10 +11,10 @@
       comments = false
   -%}
 
-  {%- if pageClass == 'presentation' -%}
+  {%- if class == 'presentation' -%}
     <link rel="stylesheet" href="/_assets/reveal/dist/reset.css">
     <link rel="stylesheet" href="/_assets/reveal/dist/reveal.css">
-    <link rel="stylesheet" href="/_assets/reveal/dist/theme/serif.css">
+    <link rel="stylesheet" href="/_assets/reveal/dist/theme/{{- theme if theme else 'serif' -}}.css">
     <link rel="stylesheet" href="/_assets/reveal/plugin/highlight/monokai.css">
   {%- else -%}
     <link rel="stylesheet" href="/_assets/css/style.css">
@@ -23,7 +23,7 @@
   {% favicons './source/_images/favicon.png' %}
 </head>
 
-<body class="site {{ pageClass -}}">
+<body class="site {{ class -}}">
   {{ content | safe }}
 </body>
 </html>

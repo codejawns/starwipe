@@ -1,16 +1,18 @@
 ---
 layout: default
-pageClass: presentation
+class: presentation
 ---
 
 {%- from 'reveal.njk' import reveal with context -%}
 
 <div class="reveal">
   <div class="slides">
+    <section>
+      <h1 class="presentation-title">{{- title -}}</h1>
+    </section>
+
     <section data-markdown>
       <textarea data-template>
-        <h1 class="presentation-title">{{- title -}}</h1>
-
         {{- content | safe -}}
       </textarea>
     </section>
