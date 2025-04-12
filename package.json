@@ -1,7 +1,7 @@
 {
   "name": "starwipe",
-  "version": "1.0.0",
-  "description": "",
+  "version": "0.2.0-alpha",
+  "description": "a small little presentation slideshow built with 11ty and reveal.js",
   "author": "Reed Piernock",
   "license": "GPL-3.0-only",
   "main": "eleventy.config.js",
