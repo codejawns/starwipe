@@ -3,6 +3,8 @@ layout: default
 pageClass: presentation
 ---
 
+{%- from 'reveal.njk' import reveal with context -%}
+
 <div class="reveal">
   <div class="slides">
     <section data-markdown>
@@ -12,3 +14,5 @@ pageClass: presentation
     </section>
   </div>
 </div>
+
+{{- reveal(slides) -}}
