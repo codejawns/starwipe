@@ -40,12 +40,6 @@
       hash: {{ slides.hash if slides.hash else true -}},
 
       {#
-        Use 1 based indexing for # links to match slide number (default is zero
-        based)
-      #}
-      hashOneBasedIndex: {{ slides.hashOneBasedIndex if slides.hashOneBasedIndex else true -}},
-
-      {#
         [Note:]
         Since the Speaker Notes plugin is enabled, the total time of the
         presentation can be set, instead of the timing per slide. Total time
