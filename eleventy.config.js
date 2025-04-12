@@ -16,6 +16,12 @@ export default async function(eleventyConfig) {
   // using the `.gitignore`, and only use `.eleventyignore`.
   eleventyConfig.setUseGitIgnore(false);
 
+  // The 11ty plugin configuration above is only used for images that are coded
+  // within the HTML _as_ images, i.e. they use the `<img>` tag. If background
+  // images are used in slides, they need to be copied over. PassThrough allows
+  // 11ty to grab those images and move them into the output site build.
+  eleventyConfig.addPassthroughCopy('./source/presentation/**/images/*.*');
+
   // Add the metagen plugin for 11ty.
   // https://github.com/tannerdolby/eleventy-plugin-metagen
   eleventyConfig.addPlugin(metagen);
