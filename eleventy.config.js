@@ -1,9 +1,13 @@
+// 11ty community plugins.
 import favicons from 'eleventy-plugin-gen-favicons';
-import markdownIt from 'markdown-it';
-import markdownItAttrs from 'markdown-it-attrs';
 import metagen from 'eleventy-plugin-metagen';
 
-import filterDate from './source/_config/filters/date-simple.js';
+// Additional plugins.
+import markdownIt from 'markdown-it';
+import markdownItAttrs from 'markdown-it-attrs';
+
+// Custom plugins in this project.
+import filterDateSimple from './source/_config/filters/date-simple.js';
 
 export default async function(eleventyConfig) {
   // There are some files that we want git to ignore, and not commit to the
@@ -16,7 +20,8 @@ export default async function(eleventyConfig) {
   // https://github.com/tannerdolby/eleventy-plugin-metagen
   eleventyConfig.addPlugin(metagen);
 
-  // Add the MarkdownIt plugin for 11ty.
+  // Add the MarkdownIt plugin to 11ty.
+  // https://github.com/markdown-it/markdown-it
   eleventyConfig.setLibrary('md',
     markdownIt({
       html: true,
@@ -31,7 +36,10 @@ export default async function(eleventyConfig) {
     'outputDir': './site'
   });
 
-  eleventyConfig.addPlugin(filterDate);
+  // Filters and shortcodes are located in `./source/_config/`.
+
+  // Add the filter to convert dates into simple formats.
+  eleventyConfig.addPlugin(filterDateSimple);
 };
 
 export const config = {
@@ -39,11 +47,15 @@ export const config = {
   htmlTemplateEngine: 'njk',
   markdownTemplateEngine: 'njk',
 
+    // These are the folders that 11ty will use when compiling the built site.
+    // The directories for `input` and `output` are relative to the root of the
+    // _project_. The directories for `data`, `includes`, and `layouts` are
+    // relative to the `input` directory, i.e. `source`.
   dir: {
+    output: 'site',
     input: 'source',
     data: '_data',
     includes: '_includes',
-    layouts: '_layouts',
-    output: 'site'
+    layouts: '_layouts'
   }
 }
