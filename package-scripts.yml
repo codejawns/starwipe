@@ -6,8 +6,8 @@ scripts:
       source: "cp -r ./source/_sample/* ./source/"
     reveal:
       init: "nps prepare.reveal.dist prepare.reveal.plugins"
-      dist: "mkdir -p ./site/_assets/reveal/ && cp -r ./node_modules/reveal.js/dist/ $_"
-      plugins: "mkdir -p ./site/_assets/reveal/ && cp -r ./node_modules/reveal.js/plugin $_"
+      dist: "mkdir -p ./site/_assets/reveal/ && cp -r ./node_modules/reveal.js/dist/ ./site/_assets/reveal/"
+      plugins: "mkdir -p ./site/_assets/reveal/ && cp -r ./node_modules/reveal.js/plugin ./site/_assets/reveal/"
   site:
     build: "npx @11ty/eleventy --quiet"
     watch: "npx @11ty/eleventy --quiet --serve"
