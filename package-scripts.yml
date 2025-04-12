@@ -1,5 +1,13 @@
 scripts:
-  prepare: "cp -r ./source/_sample/* ./source/"
+  prepare:
+    init: "nps prepare.starwipe.init prepare.reveal.init"
+    starwipe:
+      init: "nps prepare.starwipe.source"
+      source: "cp -r ./source/_sample/* ./source/"
+    reveal:
+      init: "nps prepare.reveal.dist prepare.reveal.plugins"
+      dist: "mkdir -p ./site/_assets/reveal/ && cp -r ./node_modules/reveal.js/dist/ $_"
+      plugins: "mkdir -p ./site/_assets/reveal/ && cp -r ./node_modules/reveal.js/plugin $_"
   site:
     build: "npx @11ty/eleventy --quiet"
     watch: "npx @11ty/eleventy --quiet --serve"

@@ -19,7 +19,7 @@
     "sass": "^1.86.3"
   },
   "scripts": {
-    "prepare": "nps prepare",
+    "prepare": "nps prepare.init",
     "build:site": "nps site.build",
     "watch:site": "nps site.watch",
     "build": "npm-run-all build:*",
