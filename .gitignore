@@ -5,9 +5,10 @@
 /site
 
 # These files are generated on `npm install` and are not part of the starwipe
-# repository. HOWEVER, you may want to commit your talks in YOUR repository.
-# In that case, you should remove the following lines, or comment them out.
-# That way, your presentations are part of your repo!
+# repository. HOWEVER, you will very most likely want to commit these files in
+# YOUR repository! Remove the following lines, or comment them out. That way,
+# your data and content is part of your repo!
+/source/_data/site.json
 /source/page/**/*.md
 /source/presentation/**/
 
