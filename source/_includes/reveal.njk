@@ -1,55 +1,55 @@
 {%- macro reveal(slides)-%}
 
-  <script src="/_assets/reveal/dist/reveal.js"></script>
-  <script src="/_assets/reveal/plugin/highlight/highlight.js"></script>
-  <script src="/_assets/reveal/plugin/markdown/markdown.js"></script>
-  <script src="/_assets/reveal/plugin/notes/notes.js"></script>
+	<script src="/_assets/reveal/dist/reveal.js"></script>
+	<script src="/_assets/reveal/plugin/highlight/highlight.js"></script>
+	<script src="/_assets/reveal/plugin/markdown/markdown.js"></script>
+	<script src="/_assets/reveal/plugin/notes/notes.js"></script>
 
-  <script>
-    Reveal.initialize({
-      {# Include reveal.js plugins. #}
-      plugins: [
-        {# Highlight sets up color support for code syntax. #}
-        RevealHighlight,
-        {# Markdown allows you to write your slides with Markdown syntax. #}
-        RevealMarkdown,
-        {# Notes provides speaker notes when presenting to an audience. #}
-        RevealNotes
-      ],
+	<script>
+		Reveal.initialize({
+			{#- Include reveal.js plugins. -#}
+			plugins: [
+				{#- Highlight sets up color support for code syntax. -#}
+				RevealHighlight,
+				{#- Markdown allows you to write your slides with Markdown syntax. -#}
+				RevealMarkdown,
+				{#- Notes provides speaker notes when presenting to an audience. -#}
+				RevealNotes
+			],
 
-      {#
-        Below are _selected_ configuration options available for reveal.js.
-        For each presentation, these options can be reset in the front-matter,
-        and those will be used instead of the default options set here.
-        Comments for each option are copied from the reveal.js documentation,
-        except where noted with [Note:].
-        To set additional options, refer to the full configuration at:
-        https://revealjs.com/config/
-      #}
+			{#-
+				Below are _selected_ configuration options available for reveal.js.
+				For each presentation, these options can be reset in the front-matter,
+				and those will be used instead of the default options set here.
+				Comments for each option are copied from the reveal.js documentation,
+				except where noted with [Note:].
+				To set additional options, refer to the full configuration at:
+				https://revealjs.com/config/
+			-#}
 
-      {# Determines where controls appear, "edges" or "bottom-right" #}
-      controlsLayout: "{{- slides.controlsLayout if slides.controlsLayout else 'edges' -}}",
+			{#- Determines where controls appear, "edges" or "bottom-right" -#}
+			controlsLayout: "{{- slides.controlsLayout if slides.controlsLayout else 'edges' -}}",
 
-      {# Display a presentation progress bar #}
-      progress: {{ slides.progress if slides.progress else true -}},
+			{#- Display a presentation progress bar -#}
+			progress: {{ slides.progress if slides.progress else true -}},
 
-      {#
-        Add the current slide number to the URL hash so that reloading the
-        page/copying the URL will return you to the same slide
-      #}
-      hash: {{ slides.hash if slides.hash else true -}},
+			{#
+				Add the current slide number to the URL hash so that reloading the
+				page/copying the URL will return you to the same slide
+			-#}
+			hash: {{ slides.hash if slides.hash else true -}},
 
-      {#
-        [Note:]
-        Since the Speaker Notes plugin is enabled, the total time of the
-        presentation can be set, instead of the timing per slide. Total time
-        wins over Default Timing. Timing is calulated in seconds, but we really
-        often think of presentation slots in minutes, so this will accept a
-        value for minutes, then multiply that by 60 (the number of seconds in
-        one minute). The default presentation time is 30 minutes.
-      #}
-      totalTime: ({{ slides.totalTime if slides.totalTime else 30 }} * 60)
-    });
-  </script>
+			{#
+				[Note:]
+				Since the Speaker Notes plugin is enabled, the total time of the
+				presentation can be set, instead of the timing per slide. Total time
+				wins over Default Timing. Timing is calulated in seconds, but we really
+				often think of presentation slots in minutes, so this will accept a
+				value for minutes, then multiply that by 60 (the number of seconds in
+				one minute). The default presentation time is 30 minutes.
+			-#}
+			totalTime: ({{ slides.totalTime if slides.totalTime else 30 }} * 60)
+		});
+	</script>
 
 {%- endmacro -%}
