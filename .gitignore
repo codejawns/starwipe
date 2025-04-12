@@ -8,7 +8,7 @@
 # repository. HOWEVER, you may want to commit your talks in YOUR repository.
 # In that case, you should remove the following lines, or comment them out.
 # That way, your presentations are part of your repo!
-/source/index.md
+/source/page/**/*.md
 /source/presentation/**/
 
 # Do not commit common development files.

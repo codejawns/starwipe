@@ -1,4 +1,0 @@
-{
-  "layout": "presentation",
-  "permalink": "/presentation/{{- page.fileSlug -}}/"
-}

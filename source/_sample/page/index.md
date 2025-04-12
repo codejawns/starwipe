@@ -1,6 +1,6 @@
 ---
 title: Homepage
-layout: page
+permalink: "/"
 ---
 
 # starwipe
