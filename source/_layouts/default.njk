@@ -1,0 +1,29 @@
+<!doctype html>
+<html>
+
+<head>
+	{%- metagen
+			name = site.name,
+			site_name = site.website,
+			title = title + ' [' + site.website + ']',
+			url = site.url + page.url,
+			generator = 'eleventy',
+			comments = false
+	-%}
+
+	{%- if class == 'presentation' -%}
+		<link rel="stylesheet" href="/_assets/reveal/dist/reset.css">
+		<link rel="stylesheet" href="/_assets/reveal/dist/reveal.css">
+		<link rel="stylesheet" href="/_assets/reveal/dist/theme/{{- theme if theme else 'serif' -}}.css">
+		<link rel="stylesheet" href="/_assets/reveal/plugin/highlight/monokai.css">
+	{%- else -%}
+		<link rel="stylesheet" href="/_assets/css/style.css">
+	{%- endif -%}
+
+	{% favicons './source/_images/favicon.png' %}
+</head>
+
+<body class="site {{ class -}}">
+	{{ content | safe }}
+</body>
+</html>

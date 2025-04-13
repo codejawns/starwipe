@@ -1,2 +1,2 @@
-source/_sass/**/*.md
-source/presentation/**/*.md
+/source/_sample
+/source/presentation/**/slides

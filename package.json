@@ -1,40 +1,27 @@
 {
-  "name": "starwipe",
-  "version": "0.1.1-alpha",
-  "description": "a small little presentation slideshow built with 11ty and reveal.js",
-  "author": "Reed Piernock",
-  "license": "GPL-3.0-only",
-  "homepage": "https://github.com/code-jawns/starwipe#readme",
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/code-jawns/starwipe.git"
-  },
-  "bugs": {
-    "url": "https://github.com/code-jawns/starwipe/issues"
-  },
-  "devDependencies": {
-    "@11ty/eleventy": "^2.0.0",
-    "@11ty/eleventy-img": "^3.1.8",
-    "@11ty/eleventy-navigation": "^0.3.5",
-    "@fontsource/public-sans": "^5.0.15",
-    "a11y-color-tokens": "^0.7.0",
-    "eleventy-plugin-gen-favicons": "^1.1.3",
-    "eleventy-plugin-metagen": "^1.8.3",
-    "eleventy-plugin-phosphoricons": "^1.0.1",
-    "npm-run-all": "^4.1.5",
-    "onchange": "^7.1.0",
-    "reveal.js": "^5.0.1",
-    "sass": "^1.69.5"
-  },
-  "scripts": {
-    "refresh": "rm -rf ./docs/ && npm run build:11ty",
-    "watch:tokens": "onchange ./source/_data/color.js -- npm run build:tokens",
-    "build:tokens": "touch ./source/_sass/colors/color-token-contrast.md && npx a11y-color-tokens --no-tokenPrefix --colorTokensPath='./source/_data/colors.js' --outputDirPath='./source/_sass/colors' --compatibilityDocsPath='./source/_sass/colors'",
-    "watch:css": "sass --watch --load-path=./source/_sass --load-path=./node_modules/reveal.js/dist ./source/_sass:./docs/dist/css",
-    "build:css": "sass --load-path=./source/_sass --load-path=./node_modules/reveal.js/dist ./source/_sass:./docs/dist/css",
-    "watch:11ty": "npx @11ty/eleventy --serve",
-    "build:11ty": "npx @11ty/eleventy",
-    "start": "npm-run-all --parallel watch:*",
-    "build": "npm-run-all build:*"
-  }
+	"name": "starwipe",
+	"version": "0.2.0-alpha",
+	"description": "a small little presentation slideshow built with 11ty and reveal.js",
+	"author": "Reed Piernock",
+	"license": "GPL-3.0-only",
+	"type": "module",
+	"devDependencies": {
+		"@11ty/eleventy": "^3.0.0",
+		"@11ty/eleventy-img": "^6.0.2",
+		"eleventy-plugin-gen-favicons": "^1.1.3",
+		"eleventy-plugin-metagen": "^1.8.3",
+		"markdown-it": "^14.1.0",
+		"markdown-it-attrs": "^4.3.1",
+		"npm-run-all": "^4.1.5",
+		"nps": "^5.10.0",
+		"reveal.js": "^5.2.1",
+		"sass": "^1.86.3"
+	},
+	"scripts": {
+		"prepare": "nps prepare.init",
+		"build:site": "nps site.build",
+		"watch:site": "nps site.watch",
+		"build": "npm-run-all build:*",
+		"start": "npm-run-all --parallel watch:*"
+	}
 }
