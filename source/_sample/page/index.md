@@ -1,6 +1,8 @@
----
-title: Homepage
-permalink: "/"
+---json
+{
+	"title": "Homepage",
+	"permalink": "/"
+}
 ---
 
 # starwipe
